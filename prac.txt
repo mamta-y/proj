@@ -1,0 +1,115 @@
+const lodash = require('lodash');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+
+const { User ,validateUser} = require('../models/user-model');
+const express = require('express');
+const router = express.Router();
+const Joi = require('joi');
+
+router.post('/', async (req, res) => {
+    const result = validateCred(req.body);
+    if (result.error) {
+        res.status(400).send(result.error.details[0].message)
+    }
+    
+    let user = await User.findOne({ email: req.body.email });
+    if (!user) return res.status(400).send('user doesnot exist, please register.....') 
+     const validpswd=await bcrypt.compare(req.body.password,user.password) 
+    if(!validpswd) return res.status(400).send('invalid email password');
+  const token= jwt.sign({_id:user._id,role:user.role},'Secretkey');
+   // res.send(token);
+   res.status(200).header("auth-token",token).send({"token":token,"role":user.role});
+    });
+
+    
+function validateCred(user){
+    const schema = Joi.object({
+       email:Joi.string().required().min(5).max(50).email(),
+       password:Joi.string().required().min(5).max(50)
+       
+    });
+    return schema.validate(user);
+} 
+module.exports = router;
+
+
+
+const express = require('express');
+const router = express.Router();
+const mongoose=require('mongoose');
+const Joi=require('joi');
+const { Book,validateBook}=require('../models/books-model');
+const role=require('../middleware/role');
+const auth=require('../middleware/auth');
+const roleuser=require('../middleware/roleuser');
+
+router.get('/',async(req,res)=>{
+    const books=await Book.find();
+    res.send(books);
+})
+router.get('/:id',async(req,res)=>{
+    const books=await Book.findById(req.params.id);
+    res.send(books);
+
+})
+router.post('/',async(req,res)=>{
+   const result= validateBook(req.body);
+    if(result.error){
+        res.status(400).send(result.error.details[0].message)
+    }
+    let book= new Book({
+        name:req.body.name,
+        price:req.body.price,
+        imageURL:req.body.imageURL
+        // date:req.body.date,
+        // ispublished:req.body.ispublished
+    })
+    book=await book.save();
+    res.send(book);
+})
+
+router.put('/:id',async(req,res)=>{
+// const result=validateBook(req.body);
+// if(result.error){
+//     res.status(400).send(result.error.details[0].message)
+// }
+// const book=await Book.findByIdAndUpdate(req.params.id,{name:req.body.name,date:req.body.date,
+//     ispublished:req.body.ispublished},{new:true})
+const book=await Book.findByIdAndUpdate(req.params.id,{name:req.body.name,price:req.body.price,
+        imageURL:req.body.imageURL},{new:true});
+    
+    res.send(book);
+})
+router.delete('/:id',async(req,res)=>{
+     const book=await Book.findByIdAndRemove(req.params.id);
+    if(!book) res.status(404).send('book not found')
+    res.send(book);
+})
+module.exports=router;
+
+
+require('dotenv').config();
+const express = require('express');
+const cors=require('cors');
+const app = express();
+const mongoose=require('mongoose');
+const Joi=require('joi');
+const items= require('./routes/books');
+const users=require('./routes/users')
+const login=require('./routes/login')
+
+
+mongoose.connect("mongodb://localhost/books")
+.then(()=>console.log('connected to db'))
+.catch(()=>console.log('not conneccted to db'))
+app.use(express.json());
+app.use(cors());
+
+app.use('/api/items',items);
+app.use('/api/register',users);
+app.use('/api/login',login);
+
+
+const port=process.env.PORT || 4000
+app.listen(port,()=> console.log(`listening to ${port}`));
