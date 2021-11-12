@@ -1,0 +1,853 @@
+ 
+https://bitbucket.org/agiliztechdev/unleash_ui/src/response-dashboard/src/app/response-dashboard/response-dashboard.component.ts
+
+<div class="container-fluid dashboardContainers">
+  <mat-card class="response-card">
+    <div class="card-percentage-block">
+      <div class="percentageCharts">
+<div class="percentageChartsDetail">
+      <div style="height: 30px;width: 30px;">
+        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+          [options]="pieChartOptions" [colors]="pieChartColors2" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+        </canvas>
+      </div>
+      <div class="w45px">
+        <div class="percentageText">100%</div>
+        <div class="groupName">Opened</div>
+      </div>
+    </div>
+    <div class="percentageChartsDetail">
+      <div style="height: 30px;width: 30px;">
+        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+          [options]="pieChartOptions" [colors]="pieChartColors2" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+        </canvas>
+      </div>
+      <div class="w45px">
+        <div class="percentageText">100%</div>
+        <div class="groupName">completed</div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Summary">
+        <app-summary></app-summary>
+      </mat-tab>
+      <mat-tab label="Individual">Your content should be in different component named 'Individual response'
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+
+
+
+style="align-items: center;padding-left: 40%;"
+  <b style="text-align: center;padding-left: 90px;font-size: large; padding-top: 80px;padding-bottom: 100px;margin-right: 50%;">Responses Received</b>
+margin-left: 20px;margin-right: 20px;padding-top: 70%;padding-bottom: 50%;
+
+
+<div class="container-fluid dashboardContainers">
+  <mat-card class="response-card">
+    <div style="float :right;align-items: center;">
+      <div class="item">
+        <img src="../../assets/images/resend-icon.png" alt="" height="20px" width="40px">
+        <div class="caption">Send reminder </div>
+        <div class="caption">for this activity </div>
+      </div>
+      <div class="item"> <img src="../../assets/images/copy-icon.png" alt="" height="20px" width="40px">
+        <div class="caption">Send next</div>
+        <div class="caption">affirmation activity</div>
+        </div>
+      <div class="item"> <img src="../../assets/images/trash-icon.png" alt="" height="20px" width="40px">
+        <div class="caption">Archieve this </div>
+        <div class="caption"> activity</div>
+      </div>
+    
+  </div>
+      <div class="percentageCharts">
+    <div class="percentageChartsDetail">
+      <div style="height: 30px;width: 30px;">
+        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+          [options]="pieChartOptions" [colors]="pieChartColors1" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+        </canvas>
+      </div>
+      <div class="w45px">
+        <div class="percentageText">100%</div>
+        <div class="groupName">Opened
+          </div>
+         </div>
+    </div>
+    
+    <div class="percentageChartsDetail">
+      <div style="height: 30px;width: 30px;">
+        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+          [options]="pieChartOptions" [colors]="pieChartColors2" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+        </canvas>
+      </div>
+      <div class="w45px">
+        <div class="percentageText">100%</div>
+        <div class="groupName">completed</div>
+         </div>
+        </div>
+      </div>
+        <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Summary">
+        <app-summary></app-summary>
+      </mat-tab>
+      <mat-tab label="Individual">Your content should be in different component named 'Individual response'
+      </mat-tab>
+    </mat-tab-group>
+ 
+  </mat-card>
+
+
+
+
+
+
+
+
+
+
+
+FINAL 
+
+<div class="container-fluid dashboardContainers">
+  <mat-card class="response-card">
+    <div style="float :right;align-items: center;">
+      <div class="item">
+        <img src="../../assets/images/resend-icon.png" alt="" height="20px" width="40px">
+        <div class="caption">Send reminder </div>
+        <div class="caption">for this activity </div>
+      </div>
+      <div class="item"> <img src="../../assets/images/copy-icon.png" alt="" height="20px" width="40px">
+        <div class="caption">Send next</div>
+        <div class="caption">affirmation activity</div>
+      </div>
+      <div class="item"> <img src="../../assets/images/trash-icon.png" alt="" height="20px" width="40px">
+        <div class="caption">Archieve this </div>
+        <div class="caption"> activity</div>
+      </div>
+
+    </div>
+    <div class="percentageChartsDetail">
+      <div style="height: 30px;width: 30px;">
+        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+          [options]="pieChartOptions" [colors]="pieChartColors1" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+        </canvas>
+      </div>
+      <div class="w45px">
+        <div class="percentageText">100%</div>
+        <div class="groupName">Opened </div>  
+      </div>
+    </div>
+    <b style="text-align: start;padding-left: 200px;font-size: large;">Responses Received</b>
+    <div class="percentageChartsDetail">
+      <div style="height: 30px;width: 30px;">
+        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+          [options]="pieChartOptions" [colors]="pieChartColors2" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+        </canvas>
+      </div>
+      <div class="w45px">
+        <div class="percentageText">100%</div>
+        <div class="groupName">completed</div>
+      </div>
+    </div><br>
+    <mat-card-content >
+      <mat-tab-group mat-align-tabs="center">
+       <mat-tab label="Summary" >
+         <app-summary></app-summary>
+       </mat-tab> 
+       <mat-tab label="Individual">Your content should be in different component named 'Individual response'
+       </mat-tab>
+     </mat-tab-group>
+     </mat-card-content>
+ </mat-card>
+ 
+ .dashboardContainers {
+  background-image: url("./../../assets/images/jeffrey-hamilton-unsplash.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
+}
+
+.card-container {
+  margin-top: 15px;
+  width: 50%;
+  margin: auto;
+  
+}
+.content-card {
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 50px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(157, 157, 157, 0.5);
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+ 
+} 
+
+.dashboard-container-block {
+  max-width: 1000px;
+  min-height: 620px;
+  height: auto;
+  border-radius: 50px;
+  background-color: rgb(255, 255, 255, 0.8);
+  box-shadow: 0 4px 10px 0 rgba(108, 108, 108, 0.5);
+  margin: 5% auto;
+  /* margin-top: 10%; */
+  padding-top: 20px;
+    padding-bottom: 20px; 
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.response-card{
+  max-width: 900px;
+  width: 100%;
+  border-radius: 50px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(157, 157, 157, 0.5);
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  height: 200px;
+}
+div.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: right;
+ padding-top: 0px;
+ margin-top: 0px;
+margin-bottom: 100px;
+
+
+}
+.caption {
+    display: block;
+    padding-top: 10px;
+    justify-content: space-between;
+margin-left: 10px;
+margin-right: 5px;
+
+ }
+ 
+   .groupName {
+    font-size: 9px;
+    font-weight: 500;
+    text-align: center;
+    padding-right: 900px;
+  }
+  
+  .percentageText {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.57px;
+    padding-right: 900px;
+  }
+  .percentageChartsDetail {
+    display: flex;
+    margin-top: 5px ;
+    justify-content: space-between;
+    color: #444444;
+    font-family: var(--secondary-font);
+    text-align: center;
+  }
+  .card-percentage-block {
+    width: 20%;
+    margin-top: -100px;
+    margin-right: 10px;
+  }
+
+
+  canvas {
+    width: 27px !important;
+    height: 27px !important;
+    margin: 0 auto;
+    border: 1px solid #979797;
+    border-radius: 100%;
+   
+  }
+  .cardDescription {
+    display: block;
+    width: 100%;
+    flex-direction: column;
+    margin-left: 60%;
+ 
+  }
+  
+
+<div>
+<div *ngFor="let q of summaryResponse; let i=index " class="content-card">
+    <div class="cardHeader" *ngIf="q.type === 'Multiple choice'">
+      Question  {{i+1}}:{{q.question}}
+    <img  src="../../assets/images/graph.png" alt="">
+  </div>
+</div>
+<div>
+<div *ngFor="let item of summaryResponse; let i=index "  class="content-card" >
+  <div class="cardHeader" *ngIf="item.type === 'text'">
+    Question  {{i+1}}: {{item.question}}
+    <mat-card *ngFor="let answer of item.answers" style="border-radius:8px; background-color: #f5f3f3;
+    box-shadow: 0 2px 10px 0 rgba(157, 157, 157, 0.5); margin: 0 auto; margin-top: 20px; margin-bottom: 10px;padding-bottom: 20px;
+    padding-left: 20px;padding-right: 20px;">
+      {{answer.answer}}</mat-card>
+    </div>
+  </div>
+</div>
+</div>
+ngOnInit() {
+ this.summaryResponse = [
+      {
+        type:'Multiple choice',
+        question: 'IE Click on two or three things that are NOT important to you​',
+        answers: [
+          {
+          
+            answer:  ['Art', 'Sports']
+          },
+          {
+           
+            answer: ['Belonging to a social group', 'Music']
+          }
+        ]
+      },
+     
+     
+     
+      {
+        type: 'text',
+       
+        question: 'IE What time did you get up today? How long did it take to get ready? If you had breakfast, what did you eat? How did you get where you needed to go (bus, car, walk)?​',
+        answers: [
+          {
+          
+            answer: 'This is where the response for the first participant will go. This is for questions that have open-ended responses. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+          },
+          {
+           
+            answer: 'This is where the response for the second participant will go. This is for questions that have open-ended responses. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+          }
+        ]
+      }
+    ];
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { Component, OnInit } from '@angular/core';
+import { ResponseDashboardComponent } from '../response-dashboard/response-dashboard.component';
+import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
+import * as pluginDataLabels from 'ng2-charts';
+import { Label } from 'ng2-charts';
+import { result } from 'lodash';
+@Component({
+  selector: 'app-summary',
+  templateUrl: './summary.component.html',
+  styleUrls: ['./summary.component.css']
+})
+export class SummaryComponent implements OnInit {
+  checkResponse: any = [];
+  textResponse: any = [];
+  summaryResponse: any;
+  tabSelected = 'Summary';
+  chartt: any;
+  public barChartOptions: ChartOptions = {
+    responsive: true,
+    plugins: {
+      datalabels: {
+        anchor: 'end',
+        align: 'end',
+        font: {
+          size: 20,
+        }
+      }
+    }
+  };
+  public barChartPlugins = [pluginDataLabels];
+  public barChartColor = [{
+    backgroundColor: ['#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5', '#3f51b5'],
+  }];
+  public barChartLabels: Label[] = [
+    'Art',
+    'Belonging to a social group',
+    'Being creative',
+    'Being independent',
+    'Sports',
+  ];
+  public barChartType: ChartType = 'horizontalBar';
+  public barChartLegend = true;
+  public barChartData: ChartDataSets[] = [
+    { data: [], label: 'Responses' },
+  ];
+
+
+
+  constructor() { }
+
+  responses = [
+    {
+      firstName: 'Joe',
+      lastName: 'Doe',
+      email: 'joe@gmail.com',
+      questions: [
+        {
+          type: 'Multiple choice',
+          question: 'IE Click on two or three things that are NOT important to you​',
+          options: [
+            {
+              option: 'Art',
+              checked: true
+            },
+            {
+              option: 'Belonging to a social group',
+              checked: false
+            },
+            {
+              option: 'Being creative',
+              checked: false
+            },
+            {
+              option: 'Being independent',
+              checked: false
+            },
+            {
+              option: 'Sports',
+              checked: true
+            },
+          ]
+        },
+        {
+          type: 'text',
+         
+          question: 'IE What time did you get up today? How long did it take to get ready? If you had breakfast, what did you eat? How did you get where you needed to go (bus, car, walk)?​',
+          
+          answer: 'This is where the response for the first participant will go. This is for questions that have open-ended responses. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        }
+      ]
+    },
+    {
+      firstName: 'John',
+      lastName: 'Smith',
+      email: 'john@gmail.com',
+      questions: [
+        {
+          type: 'Multiple choice',
+          question: 'IE Click on two or three things that are NOT important to you​',
+          options: [
+            {
+              option: 'Art',
+              checked: false
+            },
+            {
+              option: 'Belonging to a social group',
+              checked: true
+            },
+            {
+              option: 'Being creative',
+              checked: false
+            },
+            {
+              option: 'Being independent',
+              checked: true
+            },
+            {
+              option: 'Sports',
+              checked: true
+            },
+          ]
+        },
+        {
+          type: 'text',
+         question: 'IE What time did you get up today? How long did it take to get ready? If you had breakfast, what did you eat? How did you get where you needed to go (bus, car, walk)?​',
+          answer: 'This is where the response for the second participant will go. This is for questions that have open-ended responses. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        }
+      ]
+    }
+  ];
+  ngOnInit() {
+
+    //     for (let index = 0; index < this.responses.length; index++) {
+    //       const student = this.responses[index];
+    //       console.log('resdata',student);
+    //       const checkData = student.questions.filter(val => val.type == 'Multiple choice')
+    //       this.checkResponse.push(...checkData)
+    //       const textData = student.questions.filter(val => val.type == 'text')
+    //       this.textResponse.push(...textData)
+    //  }
+    //     console.log('checkres', this.checkResponse)
+    //     console.log('textres', this.textResponse)
+    //  }
+
+    this.summaryResponse = [
+      {
+        type: 'text',
+
+        question: 'IE What time did you get up today? How long did it take to get ready? If you had breakfast, what did you eat? How did you get where you needed to go (bus, car, walk)?​',
+        answers: [
+          {
+
+            answer: 'This is where the response for the first participant will go. This is for questions that have open-ended responses. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+          },
+          {
+
+            answer: 'This is where the response for the second participant will go. This is for questions that have open-ended responses. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+          }
+        ]
+      }
+    ];
+    const result = [0,0,0,0,0]
+    for (let i = 0; i < this.responses.length; i++) {
+      const questions = this.responses[i].questions;
+      console.log('question',questions)
+      const questionData=questions.find(val=>val.type=='Multiple choice')
+      console.log('qdata',questionData)
+      const options=questionData.options
+      console.log('options',options)
+      const isArtChecked=options.find(val=>val.option=='Art' && val.checked==true)
+      if(isArtChecked){
+        result[0]=result[0]+1
+      }
+      const isBelongingChecked=options.find(val=>val.option=='Belonging to a social group' && val.checked==true)
+      if(isBelongingChecked){
+        result[1]=result[1]+1
+      }
+      const isCreativeChecked=options.find(val=>val.option=='Being creative' && val.checked==true)
+      if(isCreativeChecked){
+        result[2]=result[2]+1
+      }
+      const isIndependentChecked=options.find(val=>val.option=='Being independent' && val.checked==true)
+      if(isIndependentChecked){
+        result[3]=result[3]+1
+      }
+      const isSportChecked=options.find(val=>val.option=='Sports' && val.checked==true)
+      if(isSportChecked){
+        result[4]=result[4]+1
+      }
+    }
+    this.barChartData = [
+      { data: result, label: 'Responses' },
+    ];
+    console.log('result',result)
+  }
+
+}
+
+
+<!--<p>summary works!</p>-->
+
+<!--<div class="content-card">
+  <div class="cardHeader">
+     
+<div *ngFor="let student of responses">
+  <div *ngFor="let q of student.questions ">
+    {{ q.question}}
+    <mat-card *ngIf="q.type=='text'" style="border-radius:8px; background-color: #f5f3f3;
+    box-shadow: 0 2px 10px 0 rgba(157, 157, 157, 0.5); margin: 0 auto; margin-top: 20px; margin-bottom: 10px;">
+      {{q.answer }}</mat-card>
+    <img *ngIf="q.type=='Multiple choice'" src="../../assets/images/graph.png" alt=""
+      style="  margin: 10px auto 20px;display: block; width: 100%;height: 300px;padding-bottom: 20px;">
+  </div>
+</div>
+</div>
+</div> style="  margin: 10px auto 20px;display: block; width: 90%;height: 300px;padding-bottom: 20px;"
+*ngIf="checkResponse.length>0;"
+
+
+<br>
+<div>
+  <div class="content-card" *ngIf="checkResponse.length>0;">
+    <div class="cardHeader">
+      {{ checkResponse[0].question}}
+    <canvas [plugins]="barChartPlugins" [colors]="barChartColor" baseChart [datasets]="barChartData" height="100"
+      [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+      [chartType]="barChartType" >   
+    </canvas>
+ 
+  </div>
+</div>
+
+<div>
+  <div class="content-card"  *ngIf="textResponse.length>0 ">
+    <div class="cardHeader">
+      {{ textResponse[0].question}}
+    <mat-card  *ngFor="let q of textResponse; let i=index "
+      style="border-radius:8px; background-color: #f5f3f3;
+    box-shadow: 0 2px 10px 0 rgba(157, 157, 157, 0.5); margin: 0 auto; margin-top: 20px; margin-bottom: 10px;padding-bottom: 20px;
+    padding-left: 20px;padding-right: 20px;">
+     {{q.answer }}</mat-card>
+  </div>
+</div>
+</div>
+</div>-->
+
+
+<div>
+  <div  class="content-card">
+    <div class="cardHeader" >
+      Question 1:{{responses[0].questions[0].question}}
+      <canvas [plugins]="barChartPlugins" [colors]="barChartColor" baseChart [datasets]="barChartData" height="100"
+        [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+        [chartType]="barChartType">
+      </canvas>
+
+    </div>
+  </div>
+  <div>
+    <div *ngFor="let item of summaryResponse; let i=index " class="content-card">
+      <div class="cardHeader" *ngIf="item.type === 'text'">
+        Question 2: {{item.question}}
+        <mat-card *ngFor="let answer of item.answers" style="border-radius:8px; background-color: #f5f3f3;
+    box-shadow: 0 2px 10px 0 rgba(157, 157, 157, 0.5); margin: 0 auto; margin-top: 20px; margin-bottom: 10px;padding-bottom: 20px;
+    padding-left: 20px;padding-right: 20px;">
+          {{answer.answer}}</mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <div class="container-fluid dashboardContainers">
+      <mat-card  style="border-radius:20px;margin-left: 30px;margin-right: 30px;"  >
+       <div class="row">
+          <div class="col-sm-3">
+            <div class="card-percentage-block">
+              <div class="percentageCharts">
+                <div class="percentageChartsDetail">
+                  <div style="margin-top: 6px;">
+                    <div class="chart">
+                      <canvas
+                        style="height:50px;   width: 27px !important;height: 27px !important;margin: 0 auto;border: 1px solid #979797;border-radius: 100%;"
+                        baseChart [data]="100" [chartType]="pieChartType" [options]="pieChartOptions"
+                        [plugins]="pieChartPlugins" [colors]="pieChartColors2" [legend]="pieChartLegend">
+                      </canvas>
+                    </div>
+                  </div>
+                  <div class="w45px"  style="margin-left: 12px;" >
+                    <div class="percentageText">100%</div>
+                    <div class="groupName">Opened</div>
+                  </div>
+                </div>
+                <div class="percentageChartsDetail">
+                  <div style="margin-top: 6px;">
+                    <div class="chart">
+                      <canvas class="percentage-class"
+                        style="height:50px; width: 27px !important;height: 27px !important;margin: 0 auto;border: 1px solid #979797;border-radius: 100%;"
+                        baseChart [data]="100" [chartType]="pieChartType" [options]="pieChartOptions"
+                        [plugins]="pieChartPlugins" [colors]="pieChartColors3" [legend]="pieChartLegend">
+                      </canvas>
+                    </div>
+                  </div>
+                  <div style="margin-left: 12px;" class="w45px">
+                    <div class="percentageText">100%</div>
+                    <div class="groupName">Completed</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3" style="margin-top:33px; font-size: 18px;">
+            Responses Received
+          </div>
+          <div class="col-sm-6"
+          style="display: flex;justify-content: space-between;align-items: center;text-align: center; margin-top: 12px;">
+          
+          <div  class="viewRoster" 
+            style="display:flex; flex-direction:column; text-align:center; align-items: center; cursor: pointer;">
+            <img src="../../assets//images/resend-icon.png" height="25px" width="25px">
+            <span>Send reminder for the activity</span>
+          </div>
+          <div style="display:flex; flex-direction:column; text-align:center; align-items: center; cursor: pointer;">
+            <img src="../../assets//images/copy-icon.png" height="25px" width="25px">
+            <span>Send next affirmation activity</span>
+          </div>
+          <div  class="viewRoster" 
+            style="display:flex; flex-direction:column; text-align:center; align-items: center; cursor: pointer;">
+            <img src="../../assets//images/trash-icon.png" height="25px" width="25px">
+            <span>Archive this activity</span>
+          </div>
+        </div>
+      </div>
+    
+    <mat-card-content>
+          <mat-tab-group mat-align-tabs="center"(selectedTabChange)="selectedTab($event)" >
+           <mat-tab label="Summary"> 
+            </mat-tab>
+            <mat-tab label="Individual">Your content should be in different component named 'Individual response'
+            </mat-tab>
+          </mat-tab-group>
+       </mat-card-content>
+      </mat-card>
+       
+      <div *ngIf="tabSelected == 'Summary'  ">
+        <app-summary></app-summary>
+      </div>
+
+
+
+
+
+.dashboardContainers {
+    background-image: url("./../../assets/images/jeffrey-hamilton-unsplash.png");
+    background-repeat: no-repeat;
+    min-height: 100%;
+  }
+  
+  .card-container {
+    margin-top: 15px;
+    width: 50%;
+    margin: auto;
+  }
+  
+  .response-dashboard-container {
+    background: #eeeeeea1;
+    border-radius: 30px;
+    min-height: 100%;
+    padding: 20px 40px;
+  }
+  
+  /* .card-percentage-block {
+    width: 59%;
+  } */
+  
+  .card-percentage-block {
+    width: 40%;
+  }
+  @media (min-width: 100px) {
+  .percentageChartsDetail {
+    display: flex;
+    margin-top: 5px;
+    justify-content: space-between;
+    color: #444444;
+    font-family: var(--secondary-font);
+    text-align: center;
+  }
+}
+.groupName {
+  font-size: 9px;
+  font-weight: 500;
+  text-align: center;
+  padding-right: 900px;
+}
+
+.percentageText {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.57px;
+  padding-right: 900px;
+}
+ 
+  
+  /* .percentageChartsDetail {
+    display: flex;
+    margin-top: 5px;
+    justify-content: space-between;
+    color: #444444;
+    font-family: var(--secondary-font);
+    text-align: center;
+  } */
+  
+  ::ng-deep .mat-card-footer {
+    margin: 0px !important;
+  }
+  
+  ::ng-deep .mat-checkbox-layout .mat-checkbox-label {
+    font-weight: 400 !important;
+  }
+  
+  
+  .w-45 {
+    width: 45% !important;
+  }
+  
+  .modal-header {
+    border-bottom: 0px !important;
+  }
+  
+ 
+  
+  .m-t-30 {
+    margin-top: 30px;
+  }
+  
+  .m-b-30 {
+    margin-bottom: 30px;
+  }
+  
+  
+  
+  
+  ::ng-deep .mat-checkbox-checked .mat-checkbox-background,
+  .mat-checkbox-indeterminate .mat-checkbox-background {
+    background: #3f51b5 !important;
+  }
+  
+  ::ng-deep .mat-card {
+    padding: 16px 27px !important;
+  }
+  @media (min-width: 100px) { 
+  .response-card{
+    max-width: 1200px;
+    width: 100%;
+    border-radius: 50px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(157, 157, 157, 0.5);
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+   height: 200px;
+  display:block;justify-content:center;align-items:center;
+  margin-left: 50px;
+  margin-right: 50px;
+  }}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

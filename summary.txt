@@ -1,0 +1,382 @@
+https://hackernoon.com/how-to-git-pr-from-the-command-line-a5b204a57ab1
+Merge commit—Keeps all commits from your source branch and makes them part of the destination branch.
+This option is the same as entering git merge --no-ff in the command line.
+
+Squash—Combines your commits when you merge the source branch into the destination branch.
+This option is the same as entering git merge --squash in the command line. 
+Fast forward—Moves commits from the source branch to the destination branch (if the destination has no new commits).
+This option is the same as entering git merge --ff-only in the command line.
+
+<div>
+  <div class="content-card" *ngIf="checkResponse.length>0">
+     {{ checkResponse[0].question}}
+    <img  src="../../assets/images/graph.png" alt=""
+      style="  margin: 10px auto 20px;display: block; width: 100%;height: 300px;padding-bottom: 20px;">
+  </div>
+</div>
+
+<div>
+  <div class="content-card"  *ngIf="textResponse.length>0">
+     {{ textResponse[0].question}}
+    <mat-card  *ngFor="let q of textResponse; let i=index "
+      style="border-radius:8px; background-color: #f5f3f3;
+    box-shadow: 0 2px 10px 0 rgba(157, 157, 157, 0.5); margin: 0 auto; margin-top: 20px; margin-bottom: 10px;padding-bottom: 20px;">
+      {{q.answer }}</mat-card>
+  </div>
+</div>
+
+
+import { Component, OnInit } from '@angular/core';
+import { ResponseDashboardComponent } from '../response-dashboard/response-dashboard.component';
+
+@Component({
+  selector: 'app-summary',
+  templateUrl: './summary.component.html',
+  styleUrls: ['./summary.component.css']
+})
+export class SummaryComponent implements OnInit {
+  checkResponse: any = [];
+  textResponse: any = [];
+  constructor() {
+
+  }
+
+  responses = [
+    {
+      firstName: 'Joe',
+      lastName: 'Doe',
+      email: 'joe@gmail.com',
+      questions: [
+        {
+          type: 'Multiple choice',
+          question: 'IE Click on two or three things that are NOT important to you​',
+          options: ['Art', 'Belonging to a social group', 'Being creative', 'Music', 'Being independent', 'Sports'],
+          answers: ['Art', 'Sports']
+        },
+        {
+          type: 'text',
+          question: 'IE What time did you get up today? How long did it take to get ready? If you had breakfast, what did you eat? How did you get where you needed to go (bus, car, walk)?​',
+          answer: 'This is where the response for the first participant will go. This is for questions that have open-ended responses. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        }
+      ]
+    },
+    {
+      firstName: 'mamta',
+      lastName: 'yadav',
+      email: 'mamta@gmail.com',
+      questions: [
+        {
+          type: 'Multiple choice',
+          question: 'IE Click on two or three things that are NOT important to you​',
+          options: ['Art', 'Belonging to a social group', 'Being creative', 'Music', 'Being independent', 'Sports'],
+          answers: ['Belonging to a social group', 'Music']
+        },
+        {
+          type: 'text',
+          question: 'IE What time did you get up today? How long did it take to get ready? If you had breakfast, what did you eat? How did you get where you needed to go (bus, car, walk)?​',
+          answer: 'This is where the response for the second participant will go. This is for questions that have open-ended responses. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        }
+      ]
+    }
+  ];
+
+  ngOnInit() {
+    for (let index = 0; index < this.responses.length; index++) {
+      const student = this.responses[index];
+      const checkData = student.questions.filter(val => val.type == 'Multiple choice')
+      this.checkResponse.push(...checkData)
+      const textData = student.questions.filter(val => val.type == 'text')
+      this.textResponse.push(...textData)
+
+    }
+    console.log('checkres', this.checkResponse)
+    console.log('textres', this.textResponse)
+  }
+
+}
+
+
+
+<div class="container-fluid dashboardContainers">
+  <mat-card class="response-card">
+    <img src="../../assets/images/piee.png" alt="iamh" height="100px" width="80px" style="background-color: honeydew;">Responses Received
+    <div style="text-align: center; padding-right: 600px;padding-top: 30px;font-size: larger;"><b>Responses Received</b>
+    </div>
+ <div style="float :right;align-items: center;"> 
+     <div class="item"> <img src="../../assets/images/trash-icon.png" alt="" height="20px" width="40px"><span
+          class="caption">Archieve this activity</span></div>
+          <div class="item1"> <img src="../../assets/images/copy-icon.png" alt="" height="20px" width="40px"><span
+            class="caption">Send next affirmation activity</span></div>
+          <div class="item2">
+            <img src="../../assets/images/resend-icon.png" alt="" height="20px" width="40px"><span class="caption">Send
+              reminder  this activity</span>
+          </div>
+    </div>
+  
+  </mat-card>
+  <mat-card class="content-card">
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Summary">
+        <app-summary></app-summary>
+      </mat-tab>
+      <mat-tab label="Individual">Your content should be in different component named 'Individual response'
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+
+</div>
+
+
+.dashboardContainers {
+  background-image: url("./../../assets/images/jeffrey-hamilton-unsplash.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
+}
+
+.card-container {
+  margin-top: 15px;
+  width: 50%;
+  margin: auto;
+  
+}
+.content-card {
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 50px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(157, 157, 157, 0.5);
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+ 
+} 
+
+.dashboard-container-block {
+  max-width: 1000px;
+  min-height: 620px;
+  height: auto;
+  border-radius: 50px;
+  background-color: rgb(255, 255, 255, 0.8);
+  box-shadow: 0 4px 10px 0 rgba(108, 108, 108, 0.5);
+  margin: 5% auto;
+  /* margin-top: 10%; */
+  padding-top: 20px;
+    padding-bottom: 20px; 
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.response-card{
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 50px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(157, 157, 157, 0.5);
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  height: 130px;
+}
+div.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: right;
+  width: 50px;
+  position: relative;
+ margin-left: 20px;
+ padding-right: 15%;
+}
+
+.item img {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+div.item1{
+  vertical-align: top;
+  display: inline-block;
+  text-align: right;
+  width: 50px;
+ float: right;
+  position: relative;
+ margin-left: 20px;
+ padding-right: 20px;
+ 
+}
+div.item2{
+  vertical-align: top;
+  display: inline-block;
+  text-align: right;
+  width: 50px;
+ float: right;
+  position: relative;
+ margin-left: 20px;
+ padding-right: 20px;
+ }
+    .caption {
+    display: inline-block;
+}
+
+
+
+.chart {
+  margin-top: 5px;
+}
+
+.percentageChartsDetail {
+  display: flex;
+  margin-top: 5px;
+  justify-content: space-between;
+  color: #444444;
+  font-family: var(--secondary-font);
+  text-align: center;
+}
+canvas {
+  width: 27px !important;
+  height: 27px !important;
+  margin: 0 auto;
+  border: 1px solid #979797;
+  border-radius: 100%;
+}
+.card-percentage-block {
+  width: 20%;
+  margin-top: -100px;
+  margin-right: 10px;
+}
+
+
+
+
+
+
+
+ <!-- <div class="percentageChartsDetail">
+      <div style="display: block;">
+        <canvas baseChart 
+          [data]="pieChartData" 
+          [labels]="pieChartLabels" 
+          [chartType]="pieChartType"
+          [options]="pieChartOptions"
+          [colors]="pieChartColors2"
+          [plugins]="pieChartPlugins"
+          [legend]="pieChartLegend">
+        </canvas>
+      </div>
+       </div>
+       <div class="percentageChartsDetail">
+       <div style="width:40;height: 40;
+       margin:  top: 0, right: 0, bottom: 0, left: 0 ">
+         <canvas baseChart 
+           [data]="pieChartData" 
+           [labels]="pieChartLabels" 
+           [chartType]="pieChartType"
+           [options]="pieChartOptions"
+           [colors]="pieChartColors2"
+           [plugins]="pieChartPlugins"
+           [legend]="pieChartLegend">
+         </canvas>
+        </div>
+      </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid dashboardContainers">
+  <mat-card class="response-card">
+    <img src="../../assets/images/piee.png" alt="" height="100px" width="70px" style="background-color: honeydew;"><b style="text-align: center;padding-left: 50px;font-size: x-large; padding-top: 30px;">Responses Received</b>
+    <div style="float :right;align-items: center;">
+      <div class="item">
+        <img src="../../assets/images/resend-icon.png" alt="" height="20px" width="40px">
+        <div class="caption">Send reminder </div>
+        <div class="caption">for this activity </div>
+      </div>
+      <div class="item"> <img src="../../assets/images/copy-icon.png" alt="" height="20px" width="40px">
+        <div class="caption">Send next</div>
+        <div class="caption">affirmation activity</div>
+        </div>
+      <div class="item"> <img src="../../assets/images/trash-icon.png" alt="" height="20px" width="40px">
+        <div class="caption">Archieve this </div>
+        <div class="caption"> activity</div>
+      </div>
+    </div>
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Summary">
+        <app-summary></app-summary>
+      </mat-tab>
+      <mat-tab label="Individual">Your content should be in different component named 'Individual response'
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>
+
+
+
+
+
+<div class="container-fluid dashboardContainers">
+  <mat-card class="response-card">
+<!--<div class="percentageChartsDetail">
+      <div style="height: 30px;width: 30px;">
+        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+          [options]="pieChartOptions" [colors]="pieChartColors2" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+        </canvas>
+      </div>
+      <div class="w45px">
+        <div class="percentageText">100%</div>
+        <div class="groupName">Opened</div>
+      </div>
+    </div>
+    <div class="percentageChartsDetail">
+      <div style="height: 30px;width: 30px;">
+        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+          [options]="pieChartOptions" [colors]="pieChartColors2" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+        </canvas>
+      </div>
+      <div class="w45px">
+        <div class="percentageText">100%</div>
+        <div class="groupName">completed</div>
+      </div>
+    </div>-->
+    <img src="../../assets/images/piee.png" alt="" height="100px" width="70px" style="background-color: honeydew;"><b style="text-align: center;padding-left: 50px;font-size: x-large; padding-top: 30px;">Responses Received</b>
+    <div style="float :right;align-items: center;">
+      <div class="item">
+        <img src="../../assets/images/resend-icon.png" alt="" height="20px" width="40px">
+        <div class="caption">Send reminder </div>
+        <div class="caption">for this activity </div>
+      </div>
+      <div class="item"> <img src="../../assets/images/copy-icon.png" alt="" height="20px" width="40px">
+        <div class="caption">Send next</div>
+        <div class="caption">affirmation activity</div>
+      </div>
+      <div class="item"> <img src="../../assets/images/trash-icon.png" alt="" height="20px" width="40px">
+        <div class="caption">Archieve this </div>
+        <div class="caption"> activity</div>
+      </div>
+    </div>
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Summary">
+        <app-summary></app-summary>
+      </mat-tab>
+      <mat-tab label="Individual">Your content should be in different component named 'Individual response'
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>
