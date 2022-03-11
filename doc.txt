@@ -1,0 +1,22 @@
+Pramila@98 -wpa
+        AGGREGATION
+1]WQTD EMP WORKING IN DEPT 10?
+db.emp1.aggregate({$match:{dept:10}})
+2]WQTD ALL EMP NAME AND DEPTNO.WHOSE SALARY IS >5000 ?
+db.emp1.aggregate([{$match:{salary:{$gt:20000}}},{$project:{name:1,dept:1,_id:1}}])
+
+ 3} WHO IS GETTING HIGHEST SALARY?
+db.emp1.aggregate([{$sort:{salary:-1}},{$limit:1}])
+
+4] DISPLAY ALL DEPT?    db.emp.aggregate([{$group:{_id:{dept:"$dept"}}}])
+5] DISPLAY NO.OF EMP IN EACH DEPT?db.emp.aggregate([{$group:{_id:{dept:"$dept"},count:{$sum:1}}}])
+6] SUM OF SALARY IN EACH DEPT?  db.emp.aggregate([{$group:{_id:{depart:"$dept"},sumofsal:{$sum:"$salary"}}}])
+ 7]DPT WHICH IS PAYING HIGHEST SALARY?
+db.emp.aggregate([{$group:{_id:{depart:"$dept"},sumofsal:{$sum:"$salary"}}},{$sort:{sumofsal:-1}},{$limit:1}])
+ 8] TO DISPLAY HIGHEST SAL IN EACH DEPT?
+ db.emp1.aggregate([{$group:{_id:{depart:"$dept"},sumofsal:{$max:"$salary"}}},{$sort:{sumofsal:-1}},{$limit:3}])
+
+ db.emp.createIndex({name:1})
+db.emp.dropIndex({name:1})
+ db.emp.update({"address.city":"Hyderabad"},{$inc:{salary:800}})
+https://surveys.infosysapps.com/r/a/Infosys_DSE_SP

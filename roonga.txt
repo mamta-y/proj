@@ -1,0 +1,420 @@
+git checkout feature/create-apis-in-cartfor the first tym when we make a push oon new brnach use this
+ git push -u origin feature/ROON-43-create-get-api-to-fetch-the-data
+
+
+git push -u origin feature/ROON-61-create-a-post-request-for-login
+
+git checkout -b subdivision-get-api-create
+git checkout -b feature/ROON-64-get-group-bygrouptype-id
+
+git push -u origin feature/ROON-168-create-all-required-apis-in-drive
+POST - https://staging.roonga.com/api/drive
+
+
+git checkout bugfix/ROON-193-manage-supplier-changes
+git push -u origin bugfix/ROON-193-manage-supplier-changes
+git push -u origin feature/ROON-119-update-delivery-info-products
+git push -u origin feature/ROON-120-get-list-of-categories-in-drive
+git push -u origin feature/ROON-163-create-all-apis-in-users
+git push -u origin feature/ROON-165-catalog-and-cataloggroup-apis
+git push -u origin feature/ROON-193-manage-supplier-and-salestax
+
+git push -u origin feature/ROON-192-adoption-drives-apis-create
+
+git push -u origin feature/ROON-203-catalog-products-api-changes
+git checkout feature/ROON-66-get-api-catalog-supplier
+git push -u origin feature/ROON-205-order-api-changes
+git checkout -b feature/ROON-75-get-api-drive-maxleadtime-id
+git checkout -b feature/ROON-72-get-api-group-details-by-id
+git checkout -b feature/ROON-80-post-api-drive-calculateTaxes
+git checkout -b feature/ROON-77-post-add-product-to-drive
+git checkout -b feature/ROON-91-get-adoptiondrive-profile-id
+git checkout -b feature/ROON-119-update-delivery-info-products
+git checkout -b feature/ROON-118-update-product-info
+git checkout -b feature/ROON-120-get-list-of-categories-in-drive
+git checkout -b feature/create-required-apis
+git checkout feature/create-category-apis-misc
+git checkout -b  feature/create-apis-in-adoptiondrive
+git push -u origin feature/ROON-192-adoption-drives-apis-create
+ag-roonreview
+
+git checkout -b feature/ROON-163-create-all-apis-in-users
+git checkout -b  feature/create-apis-in-cart
+git checkout -b feature/ROON-165-catalog-and-cataloggroup-apis
+git checkout -b feature/ROON-168-create-all-required-apis-in-drive
+git checkout -b feature/create-all-apis-in-group
+git checkout -b feature/ROON-193-manage-supplier-and-salestax
+git push -u origin feature/ROON-202-manage-user-master-data-api-changes
+git checkout -b feature/ROON-202-manage-user-master-data-api-changes
+
+https://staging.roonga.com/api/cart/36966
+
+email: "testm_hunter3122@yahoo.com"
+firstName: "Michael"
+groupId: 1569
+groupType: 92
+lastName: "Hunter"
+userId: 35771
+userType: 128
+
+
+
+https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786
+https://www.npmjs.com/package/dotenv
+https://dev.to/glaucia86/developing-a-crud-node-js-application-with-postgresql-4c9o
+https://github.com/bezkoder/node-js-postgresql-crud-example/tree/master/app
+git checkout ROON-25-create-a-crud-operation
+
+  //if (findbyname || findbyregion || findbystatus) {
+        console.log("enter try")
+        // groupController.searchByName(req.body.keyWord, res).then((groups) => {
+        //     var groupIds = groups.map((d) => d.id);
+        //     controller.findByGroupIds(groupIds, res).then((datas) => {
+        //         console.log("data", datas)
+        //     })
+        // });
+        //}
+        // else
+           // if (req.body.groupId != undefined) {
+                // console.log("findbyname")
+                // controller.searchByNameTeam(req.body.keyWord, res).then((drives) => {
+                //     console.log("byname", drives)
+
+                    //getAllDrivesInfo(req, res, drives.filter((drive) => drive.groupId == req.body.groupId));
+               // });
+          //  }
+            // else {
+            //     console.log("else of findbyname")
+            //     controller.searchByName(req.body.keyWord, res).then((drives) => {
+                  //  console.log(" else byname", drives)
+                    //getAllDrivesInfo(req, res, drives);
+                //});
+          //  }
+        //if (findbystatus) {
+            console.log("findbystatus....")
+            controller.findByStatus([req.params.id], res).then((drives) => console.log(" byid", drives) );
+        // }
+        // else {
+        //     console.log("elseeeeeeee2....")
+        //     groupController.findById({ params: { id: req.query.groupId } }, res).then((group) => {
+        //         controller.findByStatusAndGroupId([req.params.id], group.id, res).then((drives) => getAllDrivesInfo(req, res, drives));
+        //     })
+        // }
+
+
+
+{
+"email":"mamtayadav1160@gmail.com",
+    "driveId":2278,
+    "userId":37106,
+    "firstName":"dinesh",
+"profileId":null,
+"type":1,
+"subTotal": "17.99",
+"tax": "0.00",
+"shipping":"0.00",
+"fees":"0.51",
+"total": "20.55",
+"withHold":false
+      
+}
+
+
+    profiledonorreport
+
+    ROON-28
+https://www.roonga.com/api/master/itemlistsreport/2131
+Request Method: GET
+
+
+/Check is Drive Slug is Unique
+ router.get('/checkslug/:id', async function (req, res, next) {
+//     controller.findByIdOrSlug(req, res, (drive) => {
+//         if (drive.length == 0) {
+//             res.status(201).send(messages.__GENERIC_MESSAGE_OBJ(messages._GENERIC_SUCCESS, "The Friendly URL does not exist !!!"));
+//         }
+//         else {
+//             res.status(201).send(messages.__GENERIC_FAILURE_OBJ("" + drive[0].id));
+//         }
+
+//     })
+const check= await checkFriendlyUrl(req,res)
+console.log("data",check)
+if(check == true){
+ res.status(201).send(messages.__GENERIC_MESSAGE_OBJ(messages._GENERIC_SUCCESS, "The Friendly URL does not exist !!!"))
+   
+}
+else{
+ res.status(201).send(messages.__GENERIC_FAILURE_OBJ("" + check[0].id));
+   
+}
+})
+
+
+ function checkFriendlyUrl(req,res){
+      return new Promise((resolve , reject) => {
+          console.log("entered promise")
+    controller.findByIdOrSlug(req, res, (drive) => {
+        console.log("entered controller")
+       
+                if (drive.length == 0) {
+                  // return true;
+                  resolve(true)
+
+                   
+                    }
+                else {
+                   //return false;
+                  resolve(drive);
+                 
+                  
+                  
+                }
+    
+            })
+       })   
+}
+
+
+
+http://localhost:8080/drive/checkslug/123----------GET
+
+/checkslug/:id-----------------------FUNTION
+​ friendlyurl-check-----------------------BRANCH
+http://localhost:8080/drive POST
+HOST --------------------------------------54.187.99.146
+appadmin
+
+   try{
+  return  new Promise((resolve, reject) => {
+        console.log("entered promise")
+       controller.findByIdOrSlug(req, res).then((result) => {
+            console.log("entered controller")
+            if (result.length == 0) {
+                resolve(true)
+            }
+            else {
+                resolve(result);
+            }
+        
+        })
+    })
+}catch(err){
+    console.log(err)
+
+}}
+
+
+
+
+
+
+
+
+
+
+   res.status(201).send(messages.__GENERIC_CREATION_SUCCESS_OBJ(data, name));
+                           console.log("give data",data)
+                           
+                       }
+                   })
+               })
+           }
+           else {
+             res.status(201).send(messages.__GENERIC_CREATION_SUCCESS_OBJ(data, name));
+               console.log("given data",data)
+           }
+       }
+   });
+   
+}else{
+    res.status(201).send(messages.__GENERIC_FAILURE_OBJ("Friendly Url Already Exists"));
+}}
+catch(err){
+    console.log("err",err)
+ res.status(201).send(messages.__GENERIC_FAILURE_OBJ(err));
+   
+}
+
+}
+
+
+
+
+
+
+
+
+function searchDrive(req, res) {
+    try {
+        //if (req.body.keyWord) {
+        // console.log("enter try")
+        // groupController.searchByName(req.body.keyWord, res).then((groups) => {
+        //    // console.log("find....",groups)
+        //   // res.status(201).send(messages.__GENERIC_FOUND_OBJ(groups,name));
+        //     var groupIds = groups.map((d) => d.id);
+        //     controller.findByGroupIds(groupIds, res).then((datas) => {
+        //         console.log("data",datas)
+        //         getAllDrivesInfo(req, res, datas);
+        //     })
+        // });
+        // } else
+        console.log("enter try")
+        if (req.body.groupId != undefined) {
+            console.log("findbynamee....")
+            controller.searchByNameTeam(req.body.keyWord, res).then((drives) => {
+                console.log("findbynamee....")
+                getAllDrivesInfo(req, res, drives.filter((drive) => drive.groupId == req.body.groupId));
+            });
+        }
+        else {
+            console.log("elseeeeeeee1....")
+            controller.searchByName(req.body.keyWord, res).then((drives) => {
+                getAllDrivesInfo(req, res, drives);
+            });
+        }
+        //    if (req.query.groupId == null) {
+        //         console.log("findbystatus....")
+        //         controller.findByStatus([req.params.id], res).then((drives) => getAllDrivesInfo(req, res, drives));
+        //     }
+        //     else {
+        //         console.log("elseeeeeeee2....")
+        //         groupController.findById({ params: { id: req.query.groupId } }, res).then((group) => {
+        //             controller.findByStatusAndGroupId([req.params.id], group.id, res).then((drives) => getAllDrivesInfo(req, res, drives));
+        //         })
+        //     }
+
+    } catch (err) {
+        console.log(' error in catch block ' + err);
+        res.status(500).send(messages.__GENERIC_FAILURE_OBJ(err));
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getAllDrives(req, res, next) {
+    try{
+        console.log("enetring in try block")
+    if (req.query.paginate != undefined) {
+        if (req.query.paginate == true || req.query.paginate == "true") {
+            if (_.toInteger(req.query.page) > 0) {
+                controller.count(NON_DRAFT_DRIVE_STATUS, res, (counts) => {
+                    console.log("entering controller")
+                    let pages = _.ceil(counts[0].dataValues.count / applicationConf._PAGINATION_PAGE_SIZE);
+                    let requestedPage = _.toInteger(req.query.page);
+                    let offset = (requestedPage - 1) * applicationConf._PAGINATION_PAGE_SIZE;
+                    controller.findByStatusPagination([28, 29], offset, applicationConf._PAGINATION_PAGE_SIZE, res, false, (drives) => {
+                        if (drives.length == 0) {
+                            controller.findByStatusPagination([28, 29, 30], offset,applicationConf._PAGINATION_PAGE_SIZE, res, true, (drives1) => {
+                                getAllDrivesInfo(req, res, drives1, pages)
+                            })
+                        } else if (drives.length < applicationConf._PAGINATION_PAGE_SIZE) {
+                            console.log("first elseif")
+                            controller.findByStatusPagination([30], 0,(applicationConf._PAGINATION_PAGE_SIZE - drives.length), res, true, (drives2) => {
+                                drives2 = [...drives, ...drives2]
+                                getAllDrivesInfo(req, res, drives2, pages)
+                            })
+                        }
+                        else {
+                            console.log("second else")
+                            getAllDrivesInfo(req, res, drives, pages)
+                        }
+                    });
+                });
+            }
+            else
+                res.status(200).send(messages.__GENERIC_FAILURE_OBJ("Incorrect Page"));
+        }
+        else
+            res.status(200).send(messages.__GENERIC_FAILURE_OBJ("Incorrect Query Params"));
+    }
+    else {
+        console.log("last else")
+        controller.findByStatusAndDriveSort(ACTIVE_PENDING_DRIVE_STATUS, 1, res, (drives) => {
+            controller.findByStatusAndDriveSort(CLOSED_DRIVE_STATUS, 0, res, (closeddrives) => {
+                Array.prototype.push.apply(drives, closeddrives);
+                getAllDrivesInfo(req, res, drives);
+            });
+        });
+    }}catch(err){
+        console.log("err",err)
+     res.status(201).send(messages.__GENERIC_FAILURE_OBJ(err));
+       
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var dataArray = req.body;
+        var updatedObjs = 0;
+        if (dataArray.length > 0) {
+            dataArray.forEach((data, i) => {
+                return new Promise((resolve , reject ) => {
+                return Model.findOne({ id: data.id })
+                    .then((foundData) => {
+                        if (foundData) {
+                            data.updatedBy = usertracking.loggedInUser;
+                            foundData.update(data)
+                                .then((updatedData) => {
+                                    ++updatedObjs;
+                                    if (i == (dataArray.length - 1))
+                                        resolve (updatedObjs);
+                                })
+                                .catch((error) => {
+                                    console.log("Some Error Occured : " + error);
+                                    //console.dir(error, { depth: null });
+                                });
+                        }
+                        else {
+                            if (i == (dataArray.length - 1))
+                            resolve (updatedObjs);
+                        }
+                    })
+                })
+                    .catch((error) => {
+                        //console.dir(error, { depth: null });
+                        res.status(400).send(messages.__GENERIC_FAILURE_OBJ(error.errors))
+                    });
+            });
+        }
+    },
+
+
+
+
+{"status":"SUCCESS","message":"Drive Found !!!","data":{"accountInfo":{"id":1425,"userId":36966,"groupId":1529,"name":"Testing AgilizTech 4","desc":"<p>Testing AgilizTech 4<br></p>","closeDate":"2020-07-31T00:00:00.000Z","status":28,"canDonateThroughRoonga":false,"canDonateOffline":false,"template":1,"editDate":null,"launchDate":"2020-05-01T00:00:00.000Z","friendlyUrl":"testingagiliztech4","enableDonorReport":false,"buyGiveDrive":false,"isPrice":false,"thankYouEmailTemplate":null,"currencyId":null,"driveType":"adoption","adoptionEndDate":"2023-08-29T00:00:00.000Z","amazonUrl":null,"parentId":null,"salesTax":"0.00","driveAmountAchieved":"0.00","driveAmountGoal":"0.00","teamDriveAmtFlag":false,"teamDriveItemFlag":false,"driveItemGoal":0,"driveItemsAchieved":0,"adoptionProfilesAllowed":"25","teamName":null,"teamDriveLogo":null,"isTeamDriveLogoChanged":null,"beneficiaries":[],"trackReceipt":null,"copyImagesFromParentDrive":false,"createdBy":15817,"updatedBy":-1,"deliveryStatus":null,"newTemplate":null,"groupDesc":null,"isGroupDescSpecific":null,"newImageSet":true,"createdAt":"2020-10-30T15:41:37.188Z","updatedAt":"2021-12-22T12:54:08.453Z"},"adoptionDriveConfig":{"id":255,"driveId":1425,"giftRequestsByAdminOnly":true,"instructions":"<p>  </p>","maxGiftPrice":"0","isGroup":null,"notAllowedItems":null,"wrapRequirements":null,"labellingRequirements":null,"additionalInfo":null,"adoptionDriveType":10,"isFamily":false,"isIndividual":true,"autogenProfileIdType":25,"minMax":0,"contactNameRequired":true,"publicProfileView":133,"memberProfileDisplay":135,"driveAccess":1},"media":[{"id":2647,"driveId":1425,"url":"https://s3-us-west-2.amazonaws.com/roongatestimages/drives/1425/QLssJpvf8d.jpg","isImage":true,"sortOrder":0}],"completionPercentage":0,"totalSum":4,"sponsoredSum":0,"group":{"id":1529,"name":"dinesh tamilalagan","description":"","createdBy":36966,"defaultNotifyOnComments":false,"public":true,"country":"US","subdivision":"US-FL","city":"Bangalore","image":"https://s3-us-west-2.amazonaws.com/roongatestimages/groups/1615878013545.jpg","address":"test fafs","phone":"9876543212","email":"dinesh@agiliztech.com","website":"www.roonga.com","type":86,"taxId":"12334555","region":null,"isActive":true,"state":null,"streetAddress":null,"zipcode":"560068","allowAafDrives":false,"lat":12.8892684,"lng":77.63991,"statementDescriptor":"DineshNonPro","createdAt":"2021-03-13T08:12:14.936Z","updatedAt":"2021-08-24T11:44:17.922Z"},"user":{"id":36966,"firstName":"dinesh","lastName":"nonprofit","email":"dinesh@agiliztech.com","isStaff":false,"isActive":true,"isSuperuser":false,"lastLogin":"2021-12-21T11:52:16.435Z","dateJoined":"2021-03-13T08:12:14.503Z","image":"https://s3-us-west-2.amazonaws.com/roongatestimages/users/36966.jpg","city":"Kent","subdivision":"US-OH","tosAcceptedDate":"2021-03-13T08:12:14.503Z","messagesReadAt":null,"notifyOnComments":false,"newslettersOptIn":false,"country":"US","redirectUrl":null,"newslettersOptDate":null,"type":77,"title":"","validationRequiredSocial":true,"phoneNumber":null,"streetName":null,"zipcode":null,"agencyPersonalId":null,"createdAt":"2021-03-13T08:12:14.503Z","updatedAt":"2021-12-21T11:52:16.442Z"},"address":[{"id":220,"driveId":1425,"dropoffAddress":"default","dropoffDateFrom":"2020-10-31T00:00:00.000Z","dropoffNotes":null,"dropoffDateTo":"2020-10-31T18:30:00.000Z","dropoffHoursFrom":"9|00|am","isDefault":true,"dropoffHoursTo":"5|00|pm","dropoffByAppointmentOnly":false,"alternativeDropoffContact":"","alternativeDropoffContactPhone":"9999999999","alternativeDropoffContactEmail":""}],"holidays":[1],"individuals":[{"id":827,"driveId":1425,"roleId":14}]}}

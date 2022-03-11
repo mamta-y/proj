@@ -1,0 +1,296 @@
+  // function check(){
+  //     return this.responses.map((u) =>
+  //     [u.questions.map(f => f.answer[0]), 
+  //     u.questions.map(f => f.answer[1])]); 
+  //     }
+  //     console.log(check());
+// console.log('data',this.responses);
+    // function check(){
+    //   return this.responses[0].questions.map((u) =>
+    //   [u.questions.question[0], 
+    //   u.questions.question[1]]);
+    //   }
+    //   console.log(' return data',this.responses);
+    //   // var x= check();
+    //   // console.log(x);
+https://stackblitz.com/edit/angular-b77drk?file=app%2Fslide-toggle-configurable-example.html
+https://stackblitz.com/edit/angular-g9w2p8?embed=1&file=app/slide-toggle-overview-example.ts
+https://html.developreference.com/article/10251352/Change+slide-toggle+text+on+toggle+change
+Change slide-toggle text on toggle change
+https://stackblitz.com/edit/angular-79yf7m-yzwwc7?file=app%2Fslide-toggle-overview-example.ts
+
+code=
+https://stackblitz.com/edit/angular-mat-table-toggle-qaypdy?file=src/app/table-basic-example.ts
+
+
+https://www.freakyjolly.com/angular-10-9-8-7-6-ngfor-examples/
+<div *ngFor="let student of responses" >
+    {{ student.question1}}
+
+<ul><li  *ngFor="let q of student.questions">
+    {{ q.question}}
+  
+</li></ul>
+<img src="../../assets/images/graph.png" alt="" style="  margin: 10px auto 20px;
+display: block;">
+</div>
+
+
+
+<div class="content-card-block ">
+<div class="content-card">
+<div *ngFor="let student of responses">
+  <div *ngFor="let q of student.questions">
+    {{ student.question1}}
+    {{ q.question}}
+    <mat-card *ngIf="q.type=='text'" style="border-radius:8px; background-color: #f5f3f3;
+    box-shadow: 0 2px 10px 0 rgba(157, 157, 157, 0.5); margin: 0 auto; margin-top: 20px; margin-bottom: 10px;">
+      {{q.answer }}</mat-card>
+    <img *ngIf="q.type=='Multiple choice'" src="../../assets/images/graph.png" alt=""
+      style="  margin: 10px auto 20px;display: block; width: 100%;height: 300px;">
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+import { Component, OnInit } from '@angular/core';
+interface Types {
+  
+  firstname: String;
+  lastname:String;
+  email: String;
+  teacherType:any
+}
+
+
+
+ 
+
+
+@Component({
+  selector: 'app-manage',
+  templateUrl: './manage.component.html',
+  styleUrls: ['./manage.component.css']
+})
+export class ManageComponent implements OnInit {
+check=false;
+   teacherType:Types[]= [
+    {firstname:'mamta',lastname:'yadav',email:'mam@gmail.com' ,teacherType:null},
+    {firstname:'mamta',lastname:'yadav',email:'mam@gmail.com',teacherType:null },
+    
+  ];
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+  
+  }
+
+
+
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr>
+              
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Email</th>
+             <th>teacherType</th>
+
+            
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of teacherType">
+            <td>{{ student.firstname }}</td>
+            <td>{{ student.lastname }}</td>
+            <td>{{ student.email }}</td>
+            <td> <mat-slide-toggle [(ngModel)]="check"></mat-slide-toggle>
+                <div> {{ check }}</div></td>
+           
+            
+          </tr>
+        </tbody>
+    </table>
+  </div>
+ <!---<mat-slide-toggle [(ngModel)]="check"></mat-slide-toggle>
+  <div> {{ check }}</div>-->
+
+ <div class="table-responsive">
+  <table mat-table [dataSource]="dataSource" class="table table-bordered">
+
+    <ng-container matColumnDef="firstname">
+      <th mat-header-cell *matHeaderCellDef> FirstName </th>
+      <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
+    </ng-container>
+  
+   
+    <ng-container matColumnDef="lastname">
+      <th mat-header-cell *matHeaderCellDef> lastName </th>
+      <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+    </ng-container>
+  
+    
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+  
+    
+
+
+import { Component, OnInit } from '@angular/core';
+
+interface Types {
+   firstname: String;
+  lastname:String;
+  email: String;
+ teacherType:boolean,
+ role: string;
+}
+const TeacherType:Types[]= [
+  {firstname:'mamta',lastname:'yadav',email:'mam@gmail.com' ,teacherType:true,role: '1',},
+  {firstname:'anjali',lastname:'singh',email:'anjali@gmail.com',teacherType:false, role: '1',},
+   ];
+@Component({
+  selector: 'app-manage',
+  templateUrl: './manage.component.html',
+  styleUrls: ['./manage.component.css']
+})
+export class ManageComponent implements OnInit {
+  allColumns: string[] = [
+    'firstname','lastname','email','teacherType','toggle'
+  ];
+  displayedColumns: string[];
+  dataSource=TeacherType;
+   isAdmin: boolean = true;
+ // checked=true
+  check=false;
+  // const TeacherType:Types[]= [
+  //   {firstname:'mamta',lastname:'yadav',email:'mam@gmail.com' ,teacherType:true,role: '1',},
+  //   {firstname:'anjali',lastname:'singh',email:'anjali@gmail.com',teacherType:false, role: '1',},
+  //    ];
+
+  constructor() {
+    }
+
+  ngOnInit() {
+    this.checkIfAdmin();
+   }
+ 
+
+
+  checkIfAdmin() {
+    this.displayedColumns = this.isAdmin
+      ? this.allColumns
+      : this.allColumns.filter((column) => column !== 'toggle');
+  }
+ 
+  updateActiveStatus(element) {
+    element.teacherType = !element.teacherType;
+  }
+  }
+
+
+
+
+<app-header></app-header>
+
+<!--<div class="table-responsive">
+  
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr>
+              
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Email</th>
+             <th>teacherType</th>
+
+            
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of teacherType">
+            <td>{{ student.firstname }}</td>
+            <td>{{ student.lastname }}</td>
+            <td>{{ student.email }}</td>
+           <td> <mat-slide-toggle [(ngModel)]="check"></mat-slide-toggle>
+                <div> {{ check }}</div></td>-->
+           <!---<td>  <mat-slide-toggle [checked]="checked" 
+      (change)="checked = !checked">{{checked}}</mat-slide-toggle>
+      </td>-->
+           
+            
+        <!--- </tr>
+        </tbody>
+    </table>
+  </div>-->
+ <!---<mat-slide-toggle [(ngModel)]="check"></mat-slide-toggle>
+  <div> {{ check }}</div>-->
+<div class="box">
+  <div class="container-1"> 
+ <mat-form-field>
+   <input type="text" name="" id="" (keyup)="applyFilter($event.target.value)" matInput placeholder="search">
+ </mat-form-field>
+ </div>
+ </div>
+  <div class="table-responsive">
+  <table mat-table [dataSource]="dataSource" class="table table-bordered">
+
+    <ng-container matColumnDef="firstname">
+      <th mat-header-cell *matHeaderCellDef> FirstName </th>
+      <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
+    </ng-container>
+  
+   
+    <ng-container matColumnDef="lastname">
+      <th mat-header-cell *matHeaderCellDef> lastName </th>
+      <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+    </ng-container>
+  
+    
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+  
+    
+  
+   
+    <ng-container matColumnDef="teacherType">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.teacherType}} </td>
+    </ng-container>
+  
+  
+    <!-- toggle column -->
+    <ng-container matColumnDef="toggle">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element" >
+        <mat-slide-toggle [checked]="element.teacherType" (change)="updateActiveStatus(element)"></mat-slide-toggle>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator>
+ 
+</div>  
+
+
+
+  
+ 

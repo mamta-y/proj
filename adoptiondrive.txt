@@ -1,0 +1,302 @@
+
+  1--------------------router.post('/config', function (req, res, next) {
+});
+
+  2-----------------------router.put('/config', function (req, res, next) {
+});
+
+ 3---------------router.delete('/adoptionaddress/:id', function (req, res, next) {
+});
+
+4-----------------router.post('/profile', function (req, res, next) {
+});
+
+5--------------------router.post('/moveprofiles', (req, res) => {
+
+});
+
+6--------------------router.put('/profiledriveChange', function (req, res, next) {
+  
+});
+
+7-------------------------router.get('/profilecount/:id', function (req, res, next) {
+   
+});
+
+8------------------------router.get('/teamprofile/:id', function (req, res, next) {
+    
+});
+
+9-------------------------router.get('/profile/:id', function (req, res, next) {
+ a=> {
+});
+
+
+
+10----------------------router.delete('/profile/:id', function (req, res, next) {
+    
+});
+
+
+11-------------------------router.post('/profilesearch', function (req, res, next) {
+})
+
+12----------------------------router.post('/profilesearchV2', function (req, res, next) {
+})
+
+//Get profile by autogenid
+13--------------------------router.post('/profilesearchId', function (req, res, next) {
+})
+    
+
+//Get Profile Members by Adoption Profile Id
+14------------------------router.get('/profilemember/:id', function (req, res, next) {
+
+});
+
+15-------------------------router.post('/profilemember', function (req, res, next) {
+});
+
+16-------------------------------router.put('/profilemember', function (req, res, next) 
+});
+
+17--------------------router.delete('/profilemember/:id', function (req, res, next) {
+});
+
+18-------------------------router.get('/memberitem/:id', function (req, res, next) {
+});
+
+19---------------------------router.post('/memberitem', function (req, res, next) {
+});
+
+20-------------------------router.put('/memberitem', function (req, res, next) {
+});
+
+21-----------------------------------router.delete('/memberitem/:id', function (req, res, next) {
+});
+
+22------------------------------router.post('/emailresend', function (req, res, next) {
+});
+
+23-----------------------router.get('/socialworker/:id', function (req, res, next) {
+});
+
+24-------------------------router.post('/socialworker', async function (req, res, next) {
+}); 
+
+25---------------------------router.post('/socialworkersetup', function (req, res, next) {
+});
+
+26------------------------router.post('/socialworkerdirectsetup', async function (req, res, next) {
+});
+
+27--------------------------router.put('/socialworker', function (req, res, next) {
+});
+
+28------------------------router.delete('/socialworker/:id', function (req, res, next) {
+});
+
+29----------------------router.get('/socialworkerinfo/:id', function (req, res, next) {
+});
+
+30------------------------router.get('/donorprofiles', function (req, res, next) {
+})
+
+31------------------------router.post('/socialworkermembers/', function (req, res, next) {
+});
+
+32-------------------------router.post('/socialworkerprofiles/', function (req, res, next) {
+});
+
+//Adoption Drive Holidays
+33------------------router.post('/adoptionholiday', function (req, res, next) {
+});
+
+34-----------------------router.put('/adoptionholiday', function (req, res, next) {
+
+});
+
+35----------------------router.delete('/adoptionholiday/:id', function (req, res, next) {
+
+});
+
+//Adoption Drive Individual
+36-------------------router.post('/adoptionindividual', function (req, res, next) {
+ 
+});
+
+37-----------------router.put('/adoptionindividual', function (req, res, next) {
+    
+});
+
+38----------------router.delete('/adoptionindividual/:id', function (req, res, next) {
+ 
+});
+
+39-------------------router.get('/socialworkerbydrive/:id', function (req, res, next) {
+});
+
+40-------------------------router.get('/history/:id', function (req, res, next) {
+  
+    });
+
+
+//Create and Update Members and Items
+41-----------------------router.post('/membersanditems', function (req, res, next) {
+   
+  
+}
+
+
+//PAYLOAD NEEDED
+router.put('/api/adoptiondrive/adoptionindividual', function (req, res, next) {  });
+router.put('/api/adoptiondrive/adoptionholiday', function (req, res, next) {});
+router.post('/api/adoptiondrive/socialworkermembers/', function (req, res, next) {});
+router.post('/api/adoptiondrive/socialworkerprofiles/', function (req, res, next) {});
+router.post('/api/adoptiondrive/socialworkerdirectsetup', async function (req, res, next) {});
+router.post('/api/adoptiondrive/socialworkersetup', function (req, res, next) {});
+router.post('/api/adoptiondrive/moveprofiles', (req, res) => {});
+router.put('/api/adoptiondrive/profiledriveChange', function (req, res, next) {});
+router.post('/api/adoptiondrive/config', function (req, res, next) {});
+router.post('/api/adoptiondrive/memberitem', function (req, res, next) {});
+router.put('/api/adoptiondrive/memberitem', function (req, res, next) {});
+
+
+
+
+git checkout -b feature/create-driveemailtemplate-apis
+git push -u origin feature/create-driveemailtemplate-apis
+async function getGroup(req, res, next) {
+    try {
+        if (req.query.paginate == true || req.query.paginate == "true") {
+            if (_.toInteger(req.query.page) > 0) {
+                console.log("enter function")
+                let counts = await controller.getAll(req, res);
+                let pages = _.ceil(counts.length / req.query.limit);
+                let requestedPage = _.toInteger(req.query.page);
+                let offset = (requestedPage - 1) * req.query.limit;
+                let data = await controller.groupByPagination(offset, parseInt(req.query.limit));
+                let groupsMembership = await groupMembershipController.getAll(req, res);
+                let users = await userController.list(req, res);
+                let adminMembers = groupsMembership.filter((a) => (a.isAdmin == true && a.isOwner == true));
+                let count = 0;
+                data.forEach(g => {
+                    let groupOwner = adminMembers.filter((go) => go.groupId == g.id)[0];
+                    if (groupOwner != undefined) {
+                        g.dataValues.groupOwner = users.filter((us) => us.id == groupOwner.userId)[0];
+                    }
+                });
+                let result = { data: data, count: pages }
+                res.status(200).send(messages.__GENERIC_FOUND_OBJ(result, name));
+            } else
+                res.status(200).send(messages.__GENERIC_FAILURE_OBJ("Incorrect Page"));
+        } else {
+            console.log("enetr else")
+            let data = await controller.getAll(req, res);
+            let groupsMembership = await groupMembershipController.getAll(req, res);
+            let users = await userController.list(req, res);
+            let adminMembers = groupsMembership.filter((a) => (a.isAdmin == true && a.isOwner == true));
+            let count = 0;
+            data.forEach(g => {
+                let groupOwner = adminMembers.filter((go) => go.groupId == g.id)[0];
+                if (groupOwner != undefined) {
+                    g.dataValues.groupOwner = users.filter((us) => us.id == groupOwner.userId)[0];
+                }
+            });
+            res.status(200).send(messages.__GENERIC_FOUND_OBJ(data, name));
+        }
+    } catch (err) {
+        logger.error('getGroup error in catch block ' + err);
+        res.status(500).send(messages.__GENERIC_FAILURE_OBJ(err.message ? err.message : err));
+    }
+}
+
+
+
+Request URL: https://staging-api.roonga.com/api/master/profilesummaryreport/1968
+Request Method: GET
+Request URL: https://staging-api.roonga.com/api/master/profilereport/1968
+Request Method: GET
+
+Request URL: https://staging-api.roonga.com/api/master/profiledonorreport/1968
+Request Method: GET
+Request URL: https://staging-api.roonga.com/api/master/itemlistsreport/1968
+Request Method: GET
+
+Request URL: https://staging-api.roonga.com/api/master/itemreceiptsreport/1968
+Request Method: GET
+
+
+Request URL: https://staging-api.roonga.com/api/master/donorreport/2278?v2
+Request Method: GET
+
+Request URL: https://staging-api.roonga.com/api/master/itemreport/2306
+Request Method: GET
+
+
+Request URL: https://staging-api.roonga.com/api/master/orderreportbydrive/2278
+Request Method: GET
+
+router.get('/profilesubmitterreport/:id i/master/profilesubmitterreport/2303
+router.get('/autogenprofileid
+router.get('/profiledonorreport/:id
+router.get('/paymentreport/:id
+router.get('/collectiondonations/:id
+router.get('/adoptionsdonations/:id
+router.post('/supplier',
+router.put('/supplier
+router.get('/categorymasterbyparent/:id
+router.post('/upload'
+router.post('/email'
+router.delete('/supplier/:id
+router.delete('/deleteProduct/:id'
+router.get('/productmasterbycategory/:id'
+
+
+
+
+git checkout bugfix/ROON-199-create-apis-for-manage-catalogs
+
+
+Request URL: https://staging-api.roonga.com/api/driveshipment/driveSuppliers/2278
+Request Method: GET
+
+Request URL: https://staging-api.roonga.com/api/driveshipment/driveProducts
+Request Method: POST
+{driveId: 2278}
+{status: "SUCCESS", message: "Products Found Found !!!", data: []}
+data: []
+message: "Products Found Found !!!"
+status: "SUCCESS"
+
+Request URL: https://staging-api.roonga.com/api/driveshipment/filter
+Request Method: POST
+driveId: 2278
+status: "SUCCESS", message: "Shipment Found !!!", data: []}
+data: []
+message: "Shipment Found !!!"
+status: "SUCCESS"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

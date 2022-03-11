@@ -1,0 +1,526 @@
+https://www.youtube.com/watch?v=SBsTyy21a7g&list=PL_ED9g4TFs3FjquS_CmWNWS_SIs9uQ0Xb&index=1
+https://staging.roonga.com/api/driveemail/createDriveEmail
+
+git checkout -b feature/ROON-55-api-getall-drives-by-pagenumber-
+
+parentId: 2167, userId: 37103, groupId: 1583, name: "groupdrive", teamName: "grouppp",…}
+closeDate: "2022-01-11T00:00:00.000Z"
+contactName: "Dummy name"
+copyImagesFromParentDrive: false
+desc: "<p>no</p>"
+driveType: "team adoption"
+friendlyUrl: "groupinggggg"
+groupId: 1583
+isTeamDriveLogoChanged: true
+launchDate: "2022-01-10T00:00:00.000Z"
+media: [{,…}]
+0: {,…}
+isImage: true
+sortOrder: 0
+url: "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAA
+name: "groupdrive"
+parentId: 2167
+status: 28
+teamDriveLogo: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAA
+teamName: "grouppp"
+template: 1
+userId: 37103
+
+
+
+
+
+{parentId: 1759, userId: 37103, groupId: 1569, name: "testteam", teamName: "teamwork",…}
+closeDate: "2021-03-31T13:50:51.945Z"
+contactName: "Dummy name"
+copyImagesFromParentDrive: false
+desc: "<p>noo</p>"
+driveAmountAchieved: 0
+driveAmountGoal: 30
+driveItemsAchieved: 0
+driveType: "team"
+friendlyUrl: "teamsssss"
+groupDesc: "testing teamss"
+groupId: 1569
+isGroupDescSpecific: true
+isTeamDriveLogoChanged: true
+launchDate: "2021-03-25T13:50:51.945Z"
+media: [{,…}]
+0: {,…}
+name: "testteam"
+newTemplate: null
+parentId: 1759
+status: 31
+teamDriveAmtFlag: true
+teamDriveItemFlag: false
+teamDriveLogo: "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAA
+teamName: "teamwork"
+template: 1
+userId: 37103
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+async function createDrive(req, res) {
+    try {
+        req.params.id = req.body.friendlyUrl
+        const check = await checkFriendlyUrl(req, res)
+        if (check == true) {
+            // controller.create(req, res).then((data) => {
+               //  if (req.body.media.length > 0) {
+            //         var mediaArray = [];
+            //         var driveId = data.id;
+                     if (req.body.media.length == 1 && !req.body.media[0].isImage) {
+                        switch(req.body.media.length){
+                            case  1:{driveCreate(req,res)
+                        break;  }
+                      
+                    }}
+            //             var url = req.body.media[0].url;
+            //             var sortOrder = req.body.media[0].sortOrder;
+            //             var isImage = req.body.media[0].isImage;
+            //             mediaArray.push({ url, sortOrder, isImage, driveId });
+                    // }
+                     else {
+                        if (req.body.media.length > 0 && req.body.media.length <= 4) {
+                            switch(req.body.media.length){
+                                case  1 && 4:{driveCreate(req,res)
+                            break;  }}
+                                }
+                            }
+            //                 req.body.media.forEach((mediaItem) => {
+            //                     if (mediaItem.isImage) {
+            //                         var sortOrder = mediaItem.sortOrder;
+            //                         var isImage = mediaItem.isImage;
+            //                         var url = mediaItem.url;
+            //                         if (mediaItem.url.indexOf("https://") >= 0 || mediaItem.url.indexOf("http://") >= 0) {
+            //                             mediaArray.push({ url, sortOrder, isImage, driveId });
+            //                         }
+            //                         else {
+            //                             url = "drives/" + driveId + "/" + utils.getRandomString(10) + ".jpg";
+            //                             amazonS3Service.uploadImage(mediaItem.url, url);
+            //                             url = applicationConf.__AWS_S3_IMAGE_URL() + url;
+            //                             mediaArray.push({ url, sortOrder, isImage, driveId });
+            //                         }
+            //                     }
+            //                 });
+                       
+       // }
+ //}
+            //         driveMediaController.bulkCreate({ body: mediaArray }, res).then((objs) => { });
+              //  }
+
+                if (data.driveType == DRIVE_TYPE_ADOPTION) {
+                    switch(data.driveType){
+                        case DRIVE_TYPE_ADOPTION:{driveCreate(req,res)
+                    break;  }}
+                //     console.log('Posted------------DRIVE_TYPE_ADOPTION->', DRIVE_TYPE_ADOPTION)
+                //     var adoptionDriveConfigRequest = {
+                //         driveId: data.id,
+                //         adoptionDriveType: req.body.adoptionDriveType,
+                //         isFamily: req.body.isFamily,
+                //         isIndividual: req.body.isIndividual,
+                //         autogenProfileIdType: req.body.autogenProfileIdType,
+                //         publicProfileView: req.body.publicProfileView,
+                //         memberProfileDisplay: req.body.memberProfileDisplay
+                //     }
+
+                //     adoptionDriveConfigController.create({ body: adoptionDriveConfigRequest }, res).then((obj) => {
+                //         data.dataValues.adotionDriveConfigId = obj.id;
+                //         res.status(201).send(messages.__GENERIC_CREATION_SUCCESS_OBJ(data, name));
+                //     });
+
+                 var adoptionDriveHolidayArray = [];
+                     if (req.body.holidays != undefined && _.isArray(req.body.holidays)) {
+                        switch(req.body.holidays){
+                            case  undefined && _.isArray :{driveCreate(req,res)
+                        break;  }}
+                       
+                    
+                //         req.body.holidays.forEach((holiday) => adoptionDriveHolidayArray.push({ driveId: data.id, holidayId: holiday }));
+                //         adoptionDriveHolidayController.bulkCreate({ body: adoptionDriveHolidayArray }, res).then((holidays) => { });
+                   }
+
+                    // if (req.body.isIndividual != undefined && req.body.isIndividual) {
+                             if (req.body.individuals != undefined && _.isArray(req.body.individuals)) {
+                                switch(req.body.individuals){
+                                    case  undefined && _.isArray :{driveCreate(req,res)
+                                break;  }}
+                //             var adoptionDriveIndividualArray = [];
+                //             req.body.individuals.forEach((individual) => adoptionDriveIndividualArray.push({ driveId: data.id, roleId: individual }));
+                //             adoptionDriveIndividualController.bulkCreate({ body: adoptionDriveIndividualArray }, res).then((inds) => { });
+                       //  }
+                    }
+                 }
+                 else if (data.driveType == DRIVE_TYPE_TEAM_ADOPTION) {
+                    switch(data.driveType){
+                        case DRIVE_TYPE_TEAM_ADOPTION:{driveCreate(req,res)
+                    break;  }}
+                //     // let teamDrivelogoUrl = ''
+                    // if (req.body.teamDriveLogo) {
+
+                //     //     teamDrivelogoUrl = "drives/" + data.id + "/teamDrivelogo/" + utils.getRandomString(10) + ".jpg";
+                //     //     amazonS3Service.uploadImage(req.body.teamDriveLogo, teamDrivelogoUrl);
+                //     //     teamDrivelogoUrl = applicationConf.__AWS_S3_IMAGE_URL() + teamDrivelogoUrl;
+                //     //     data.teamDriveLogo = teamDrivelogoUrl;
+        // }
+                //     // console.log(teamDrivelogoUrl)
+                //     // console.log('=======================teamdrivelogo===========');
+                //     controller.findById({ params: { id: data.parentId } }, res).then((parentDrive) => {
+                //         adoptionDriveConfigController.getByDriveId(data.parentId, res).then((adoptionDriveConf) => {
+                //             let teamDriveRequest = { id: data.id, salesTax: parentDrive.salesTax, teamDriveLogo: req.body.teamDriveLogo, status: parentDrive.status, closeDate: parentDrive.closeDate, launchDate: parentDrive.launchDate };
+                //             controller.update({ body: teamDriveRequest }, res).then((updatedDrive) => {
+                //                 var adoptionDriveConfigRequest = {
+                //                     driveId: data.id,
+                //                     adoptionDriveType: adoptionDriveConf[0].adoptionDriveType,
+                //                     isFamily: adoptionDriveConf[0].isFamily,
+                //                     isIndividual: adoptionDriveConf[0].isIndividual,
+                //                     autogenProfileIdType: adoptionDriveConf[0].autogenProfileIdType,
+                //                     publicProfileView: adoptionDriveConf[0].publicProfileView,
+                //                     memberProfileDisplay: adoptionDriveConf[0].memberProfileDisplay,
+                //                     minMax: adoptionDriveConf[0].minMax,
+                //                     instructions: adoptionDriveConf[0].instructions,
+                //                     maxGiftPrice: adoptionDriveConf[0].maxGiftPrice,
+                //                     notAllowedItems: adoptionDriveConf[0].notAllowedItems,
+                //                     wrapRequirements: adoptionDriveConf[0].wrapRequirements,
+                //                     labellingRequirements: adoptionDriveConf[0].labellingRequirements,
+                //                     additionalInfo: adoptionDriveConf[0].additionalInfo,
+                //                     driveAccess: adoptionDriveConf[0].driveAccess
+                //                 }
+
+                //                 adoptionDriveConfigController.create({ body: adoptionDriveConfigRequest }, res).then((obj) => {
+                //                     data.dataValues.adotionDriveConfigId = obj.id;
+                //                     res.status(201).send(messages.__GENERIC_CREATION_SUCCESS_OBJ(data, name));
+                //                 });
+                //             })
+                //         })
+                //     })
+                 }
+                 else {
+                     if (data.driveType == DRIVE_TYPE_TEAM) {
+                        switch(data.driveType){
+                            case DRIVE_TYPE_TEAM:{driveCreate(req,res)
+                        break;  }}
+                            }}
+                //         let teamDrivelogoUrl = ''
+                //         if (req.body.teamDriveLogo) {
+                //             teamDrivelogoUrl = "drives/" + data.id + "/" + utils.getRandomString(10) + ".jpg";
+                //             amazonS3Service.uploadImage(req.body.teamDriveLogo, teamDrivelogoUrl);
+                //             teamDrivelogoUrl = applicationConf.__AWS_S3_IMAGE_URL() + teamDrivelogoUrl;
+                //         }
+                //         data.teamDriveLogo = teamDrivelogoUrl;
+                //         controller.findById({ params: { id: data.parentId } }, res).then((parentDrive) => {
+                //             let teamDriveRequest = { id: data.id, salesTax: parentDrive.salesTax, teamDriveLogo: teamDrivelogoUrl, status: parentDrive.status, closeDate: parentDrive.closeDate, launchDate: parentDrive.launchDate };
+                //             controller.update({ body: teamDriveRequest }, res).then((updatedDrive) => {
+                //                 if ((data.teamDriveAmtFlag != undefined && data.teamDriveAmtFlag == true) || (data.teamDriveItemFlag != undefined && data.teamDriveItemFlag == true)) {
+                //                     driveCategoryController.getByDriveId(data.parentId, res).then((categories) => {
+                //                         driveProductController.getByDriveId(data.parentId, res).then(async (products) => {
+                //                             console.log('getdriveProductsArray method call');
+                //                             let driveProductsArray = await getdriveProductsArray(data, products, categories, res);
+                //                             let productsRequestObject = { body: driveProductsArray };
+                //                             console.log('I am done persisting loop');
+                //                             driveProductController.bulkCreate(productsRequestObject, res).then(() => {
+                //                                 res.status(201).send(messages.__GENERIC_CREATION_SUCCESS_OBJ(data, name));
+                //                             });
+                //                             // let driveProductsArray = [];
+                //                             // async.series([
+                //                             //     function (seriesCallback) {
+                //                             //         async.eachSeries(categories, function (category, callback) {
+                //                             //             let filteredProducts = products.filter((obj) => obj.driveCategoryId == category.id);
+                //                             //             category.dataValues.products = filteredProducts;
+                //                             //             let obj = { body: { driveId: data.id, name: category.name, sortOrder: category.sortOrder } };
+                //                             //             driveCategoryController.create(obj, res, (catdata) => {
+                //                             //                 var count = 1;
+                //                             //                 async.eachSeries(category.dataValues.products, function (product, productCallBack) {
+                //                             //                     product = product.get({ plain: true });
+                //                             //                     product.parentId = product.id;
+                //                             //                     product.driveId = data.id;
+                //                             //                     product.driveCategoryId = catdata.id;
+                //                             //                     product.quantity = product.quantityRemaining;
+                //                             //                     product.quantityRemaining = product.quantityRemaining; // Hack for QuantityRemaining. This should be done from DB
+                //                             //                     product.id = null;
+                //                             //                     driveProductsArray.push(product);
+                //                             //                     console.log('I am in loop');
+                //                             //                     console.log(driveProductsArray);
+                //                             //                     count++;
+                //                             //                     if (count == category.dataValues.products.length) {
+                //                             //                         callback();
+                //                             //                     }
+                //                             //                     productCallBack();
+                //                             //                 })
+                //                             //             })
+                //                             //             if ((categories.indexOf(category)) == (categories.length - 1)) {
+                //                             //                 setTimeout(() => {
+                //                             //                     seriesCallback();
+                //                             //                 }, 1000)
+                //                             //             }
+                //                             //         }) 
+                //                             //     }, 
+                //                             //     function (seriesCallback) {
+                //                             //         let productsRequestObject = { body: driveProductsArray };
+                //                             //         console.log('I am done persisting loop');
+                //                             //         console.log(driveProductsArray);
+                //                             //         driveProductController.bulkCreate(productsRequestObject, res, () => {
+                //                             //             res.status(201).send(messages.__GENERIC_CREATION_SUCCESS_OBJ(data, name));
+                //                             //         });
+                //                             //         seriesCallback();
+                //                             //     }
+                //                             // ])
+
+                //                         }) // End of Drive Product
+                //                     }) // End of Category Controller                   
+                //                 } 
+               // else {
+                                //    res.status(201).send(messages.__GENERIC_CREATION_SUCCESS_OBJ(data, name));
+
+
+                               // }
+                           // })
+                       // })
+                    //}
+                   // else {
+                   //     res.status(201).send(messages.__GENERIC_CREATION_SUCCESS_OBJ(data, name));
+
+                  //  }
+               // }
+           // });
+//} 
+                        }                                             
+else {
+            res.status(201).send(messages.__GENERIC_FAILURE_OBJ("Friendly Url Already Exists"));
+        }
+   // }
+    // catch (err) {
+    //     res.status(201).send(messages.__GENERIC_FAILURE_OBJ(err));
+
+    // }
+
+}  catch (err) {
+    console.log("error",err)
+    res.status(201).send(messages.__GENERIC_FAILURE_OBJ(err));
+
+}}
+
+
+function collectionDrive(req,res){
+    // controller.create(req, res).then((data) => {
+    //     if (req.body.media.length > 0) {
+    //         var mediaArray = [];
+    //         var driveId = data.id;
+    //             var url = req.body.media[0].url;
+    //             var sortOrder = req.body.media[0].sortOrder;
+    //             var isImage = req.body.media[0].isImage;
+    //             mediaArray.push({ url, sortOrder, isImage, driveId });
+    //         }
+    //                 req.body.media.forEach((mediaItem) => {
+    //                     if (mediaItem.isImage) {
+    //                         var sortOrder = mediaItem.sortOrder;
+    //                         var isImage = mediaItem.isImage;
+    //                         var url = mediaItem.url;
+    //                         if (mediaItem.url.indexOf("https://") >= 0 || mediaItem.url.indexOf("http://") >= 0) {
+    //                             mediaArray.push({ url, sortOrder, isImage, driveId });
+    //                         }
+    //                         else {
+    //                             url = "drives/" + driveId + "/" + utils.getRandomString(10) + ".jpg";
+    //                             amazonS3Service.uploadImage(mediaItem.url, url);
+    //                             url = applicationConf.__AWS_S3_IMAGE_URL() + url;
+    //                             mediaArray.push({ url, sortOrder, isImage, driveId });
+    //                         }
+    //                     }
+    //                 });
+    //             })
+            
+    //         driveMediaController.bulkCreate({ body: mediaArray }, res).then((objs) => { });
+         }
+
+function driveCreate(req,res){
+    controller.create(req, res).then((data) => {
+        if (req.body.media.length > 0) {
+            var mediaArray = [];
+            var driveId = data.id;
+                var url = req.body.media[0].url;
+                var sortOrder = req.body.media[0].sortOrder;
+                var isImage = req.body.media[0].isImage;
+                mediaArray.push({ url, sortOrder, isImage, driveId });
+            }
+                    req.body.media.forEach((mediaItem) => {
+                        if (mediaItem.isImage) {
+                            var sortOrder = mediaItem.sortOrder;
+                            var isImage = mediaItem.isImage;
+                            var url = mediaItem.url;
+                            if (mediaItem.url.indexOf("https://") >= 0 || mediaItem.url.indexOf("http://") >= 0) {
+                                mediaArray.push({ url, sortOrder, isImage, driveId });
+                            }
+                            else {
+                                url = "drives/" + driveId + "/" + utils.getRandomString(10) + ".jpg";
+                                amazonS3Service.uploadImage(mediaItem.url, url);
+                                url = applicationConf.__AWS_S3_IMAGE_URL() + url;
+                                mediaArray.push({ url, sortOrder, isImage, driveId });
+                            }
+                        }
+                    });
+                })
+            
+            driveMediaController.bulkCreate({ body: mediaArray }, res).then((objs) => { });
+        //}
+    console.log('Posted------------DRIVE_TYPE_ADOPTION->', DRIVE_TYPE_ADOPTION)
+    var adoptionDriveConfigRequest = {
+        driveId: data.id,
+        adoptionDriveType: req.body.adoptionDriveType,
+        isFamily: req.body.isFamily,
+        isIndividual: req.body.isIndividual,
+        autogenProfileIdType: req.body.autogenProfileIdType,
+        publicProfileView: req.body.publicProfileView,
+        memberProfileDisplay: req.body.memberProfileDisplay
+    }
+
+    adoptionDriveConfigController.create({ body: adoptionDriveConfigRequest }, res).then((obj) => {
+        data.dataValues.adotionDriveConfigId = obj.id;
+        res.status(201).send(messages.__GENERIC_CREATION_SUCCESS_OBJ(data, name));
+    });
+
+    var adoptionDriveHolidayArray = [];
+  
+        req.body.holidays.forEach((holiday) => adoptionDriveHolidayArray.push({ driveId: data.id, holidayId: holiday }));
+        adoptionDriveHolidayController.bulkCreate({ body: adoptionDriveHolidayArray }, res).then((holidays) => { });
+ 
+
+    if (req.body.isIndividual != undefined && req.body.isIndividual) {
+     
+            var adoptionDriveIndividualArray = [];
+            req.body.individuals.forEach((individual) => adoptionDriveIndividualArray.push({ driveId: data.id, roleId: individual }));
+            adoptionDriveIndividualController.bulkCreate({ body: adoptionDriveIndividualArray }, res).then((inds) => { });
+     
+    }
+    controller.findById({ params: { id: data.parentId } }, res).then((parentDrive) => {
+        adoptionDriveConfigController.getByDriveId(data.parentId, res).then((adoptionDriveConf) => {
+            let teamDriveRequest = { id: data.id, salesTax: parentDrive.salesTax, teamDriveLogo: req.body.teamDriveLogo, status: parentDrive.status, closeDate: parentDrive.closeDate, launchDate: parentDrive.launchDate };
+            controller.update({ body: teamDriveRequest }, res).then((updatedDrive) => {
+                var adoptionDriveConfigRequest = {
+                    driveId: data.id,
+                    adoptionDriveType: adoptionDriveConf[0].adoptionDriveType,
+                    isFamily: adoptionDriveConf[0].isFamily,
+                    isIndividual: adoptionDriveConf[0].isIndividual,
+                    autogenProfileIdType: adoptionDriveConf[0].autogenProfileIdType,
+                    publicProfileView: adoptionDriveConf[0].publicProfileView,
+                    memberProfileDisplay: adoptionDriveConf[0].memberProfileDisplay,
+                    minMax: adoptionDriveConf[0].minMax,
+                    instructions: adoptionDriveConf[0].instructions,
+                    maxGiftPrice: adoptionDriveConf[0].maxGiftPrice,
+                    notAllowedItems: adoptionDriveConf[0].notAllowedItems,
+                    wrapRequirements: adoptionDriveConf[0].wrapRequirements,
+                    labellingRequirements: adoptionDriveConf[0].labellingRequirements,
+                    additionalInfo: adoptionDriveConf[0].additionalInfo,
+                    driveAccess: adoptionDriveConf[0].driveAccess
+                }
+
+                adoptionDriveConfigController.create({ body: adoptionDriveConfigRequest }, res).then((obj) => {
+                    data.dataValues.adotionDriveConfigId = obj.id;
+                    res.status(201).send(messages.__GENERIC_CREATION_SUCCESS_OBJ(data, name));
+                });
+            })
+        })
+    })
+        let teamDrivelogoUrl = ''
+        if (req.body.teamDriveLogo) {
+            teamDrivelogoUrl = "drives/" + data.id + "/" + utils.getRandomString(10) + ".jpg";
+            amazonS3Service.uploadImage(req.body.teamDriveLogo, teamDrivelogoUrl);
+            teamDrivelogoUrl = applicationConf.__AWS_S3_IMAGE_URL() + teamDrivelogoUrl;
+        }
+        data.teamDriveLogo = teamDrivelogoUrl;
+        controller.findById({ params: { id: data.parentId } }, res).then((parentDrive) => {
+            let teamDriveRequest = { id: data.id, salesTax: parentDrive.salesTax, teamDriveLogo: teamDrivelogoUrl, status: parentDrive.status, closeDate: parentDrive.closeDate, launchDate: parentDrive.launchDate };
+            controller.update({ body: teamDriveRequest }, res).then((updatedDrive) => {
+                if ((data.teamDriveAmtFlag != undefined && data.teamDriveAmtFlag == true) || (data.teamDriveItemFlag != undefined && data.teamDriveItemFlag == true)) {
+                    driveCategoryController.getByDriveId(data.parentId, res).then((categories) => {
+                        driveProductController.getByDriveId(data.parentId, res).then(async (products) => {
+                            console.log('getdriveProductsArray method call');
+                            let driveProductsArray = await getdriveProductsArray(data, products, categories, res);
+                            let productsRequestObject = { body: driveProductsArray };
+                            console.log('I am done persisting loop');
+                            driveProductController.bulkCreate(productsRequestObject, res).then(() => {
+                                res.status(201).send(messages.__GENERIC_CREATION_SUCCESS_OBJ(data, name));
+                            });
+                            // let driveProductsArray = [];
+                            // async.series([
+                            //     function (seriesCallback) {
+                            //         async.eachSeries(categories, function (category, callback) {
+                            //             let filteredProducts = products.filter((obj) => obj.driveCategoryId == category.id);
+                            //             category.dataValues.products = filteredProducts;
+                            //             let obj = { body: { driveId: data.id, name: category.name, sortOrder: category.sortOrder } };
+                            //             driveCategoryController.create(obj, res, (catdata) => {
+                            //                 var count = 1;
+                            //                 async.eachSeries(category.dataValues.products, function (product, productCallBack) {
+                            //                     product = product.get({ plain: true });
+                            //                     product.parentId = product.id;
+                            //                     product.driveId = data.id;
+                            //                     product.driveCategoryId = catdata.id;
+                            //                     product.quantity = product.quantityRemaining;
+                            //                     product.quantityRemaining = product.quantityRemaining; // Hack for QuantityRemaining. This should be done from DB
+                            //                     product.id = null;
+                            //                     driveProductsArray.push(product);
+                            //                     console.log('I am in loop');
+                            //                     console.log(driveProductsArray);
+                            //                     count++;
+                            //                     if (count == category.dataValues.products.length) {
+                            //                         callback();
+                            //                     }
+                            //                     productCallBack();
+                            //                 })
+                            //             })
+                            //             if ((categories.indexOf(category)) == (categories.length - 1)) {
+                            //                 setTimeout(() => {
+                            //                     seriesCallback();
+                            //                 }, 1000)
+                            //             }
+                            //         }) 
+                            //     }, 
+                            //     function (seriesCallback) {
+                            //         let productsRequestObject = { body: driveProductsArray };
+                            //         console.log('I am done persisting loop');
+                            //         console.log(driveProductsArray);
+                            //         driveProductController.bulkCreate(productsRequestObject, res, () => {
+                            //             res.status(201).send(messages.__GENERIC_CREATION_SUCCESS_OBJ(data, name));
+                            //         });
+                            //         seriesCallback();
+                            //     }
+                            // ])
+
+                        }) // End of Drive Product
+                    }) // End of Category Controller                   
+                } else {
+                    res.status(201).send(messages.__GENERIC_CREATION_SUCCESS_OBJ(data, name));
+                }
+            })
+        })
+    }
+// }else {
+//         res.status(201).send(messages.__GENERIC_CREATION_SUCCESS_OBJ(data, name));
+//     }
+// //}
+// });
+
+//}
+
+
+

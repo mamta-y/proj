@@ -1,0 +1,403 @@
+
+gcb-inzn-mzu
+
+nxy-tzgc-kmc
+
+
+
+ocalStorage is a global object that is used to store data locally on a user's computer.
+
+It is used to store data in a way that is accessible by the user's web browser.
+
+localStorage is a key-value storage system.
+
+It has a limit of 5MB.
+
+The methods of localStorage are:
+
+setItem(key, value) - to set a new key-value pair
+
+localStorage.setItem('name', 'John');
+JavaScript
+getItem(key) - to get the value of a key
+https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=navbar-color-schemes
+
+
+-webkit-filter: blur(4px); 
+filter: blur(4px); 
+https://github.com/topics/food-ordering?l=typescript
+
+API KEY: 54c460b322d54303a350fb73c19a8b17
+
+<footer style="height:auto; background-color:#F7C201;  padding: 3px; width:100%; text-align: center; left: 0; right: 10px; bottom: 5px;">
+  <a href="https://www.facebook.com">fb</a>
+<a href="https://www.instagram.com">insta</a>
+<a href="https://twitter.com">twit</a>
+<address>@ Copyright University of Mumbai 2018. Designed and Developed by University Department of Information Technology </address>
+  <p class="w3-medium">Powered by <a href="https://www.universityofmumbai.com" target="blank">mu.ac</a></p>
+</footer>
+
+
+ <div class="row">
+        <div class="col-sm-8 col-md-4 col-lg-2">
+          <img src="./book.jpeg"  style="width:80%" alt="">
+          <img src="./clg.jpeg"  style="width:60%" alt="">
+          <img src="./Student.jpeg" style="width:100%" alt="">
+          
+        </div>
+        <div class="col-sm-8 col-md-4 col-lg-2">
+          <img src="./k.jpeg"  style="width:100%"alt="">
+          <img src="./book.jpeg"  style="width:20% alt="">
+          
+                </div>
+                <div class="col-sm-8 col-md-4 col-lg-2">
+                  <img src="./cant.jpeg"  style="width:100%"alt="">
+                  <img src="./s1.jpeg"  style="width:100%"alt="">
+      </div>
+
+
+
+<section class="vh-100">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card" id="list1" style="border-radius: .75rem; background-color: #eff1f2;">
+                <div class="card-body py-4 px-4 px-md-5">
+      
+                  <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
+                    <i class="fas fa-check-square me-1"></i>
+                    <u>My Todo-s</u>
+                  </p>
+      
+                  <div class="pb-2">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex flex-row align-items-center">
+                          <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Add new...">
+                          <a href="#!" data-mdb-toggle="tooltip" title="Set due date"><i class="fas fa-calendar-alt fa-lg me-3"></i></a>
+                          <div>
+                            <button type="button" class="btn btn-primary">Add</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <hr class="my-4">
+                  
+                  <div class="d-flex justify-content-end align-items-center mb-4 pt-2 pb-3">
+                    <p class="small mb-0 me-2 text-muted">Filter</p>
+                    <select class="select">
+                      <option value="1">All</option>
+                      <option value="2">Completed</option>
+                      <option value="3">Active</option>
+                      <option value="4">Has due date</option>
+                    </select>
+                    <p class="small mb-0 ms-4 me-2 text-muted">priority</p>
+                  <select class="select">
+                    <option value="1">high</option>
+                    <option value="2">middle</option>
+                    <option value="3">low</option>
+                  </select>
+                    <p class="small mb-0 ms-4 me-2 text-muted">Sort</p>
+                    <select class="select">
+                      <option value="1">Added date</option>
+                      <option value="2">Due date</option>
+                    </select>
+                    <a href="#!" style="color: #23af89;" data-mdb-toggle="tooltip" title="Ascending"><i class="fas fa-sort-amount-down-alt ms-2"></i></a>
+                  </div>
+      
+                  <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
+                    <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input me-0"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked1"
+                          aria-label="..."
+                          checked
+                        />
+                      </div>
+                    </li>
+                    <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                      <p class="lead fw-normal mb-0">Buy groceries for next week</p>
+                    </li>
+                    <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                      <div class="d-flex flex-row justify-content-end mb-1">
+                        <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i class="fas fa-pencil-alt me-3"></i></a>
+                        <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i class="fas fa-trash-alt"></i></a>
+                      </div>
+                      <div class="text-end text-muted">
+        
+                        <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+                           date: <input type="date" name="" id="">
+                          <p class="small mb-0"><i class="fas fa-info-circle me-2></p></a>
+                      </div>
+                    </li>
+                  </ul>
+                 
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  li a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+
+
+
+
+
+
+
+
+
+
+
+<p>reactform works!</p>
+<div class="container mt-5">
+    <form [formGroup] = "checkInForm" (ngSubmit)="postData()">
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Firstname</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3"
+              formControlName ="fname">
+              <span *ngIf= " checkInForm.get('fname').touched && checkInForm.get('fname').hasError('required')">
+                Enter firstname
+              </span>
+              <span *ngIf= " checkInForm.get('fname').touched && checkInForm.get('fname').hasError('fname')">
+               Enter valid firstname
+              </span>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Lastname</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3"
+              formControlName ="lname">
+              <span *ngIf= " checkInForm.get('lname').touched && checkInForm.get('lname').hasError('required')">
+                Enter Lastname
+              </span>
+              <span *ngIf= " checkInForm.get('lname').touched && checkInForm.get('lname').hasError('lname')">
+               Enter valid Lastname
+              </span>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">DOB</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="inputEmail3"
+              formControlName ="DOB">
+              <span *ngIf= " checkInForm.get('DOB').touched && checkInForm.get('DOB').hasError('required')">
+                Enter date of birth
+              </span>
+              <span *ngIf= " checkInForm.get('DOB').touched && checkInForm.get('DOB').hasError('DOB')">
+               Enter valid date of birth
+              </span>
+            </div>
+          </div>
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="inputEmail3"
+          formControlName ="emailAddr">
+          <span *ngIf= " checkInForm.get('emailAddr').touched && checkInForm.get('emailAddr').hasError('required')">
+            Enter email address
+          </span>
+          <span *ngIf= " checkInForm.get('emailAddr').touched && checkInForm.get('emailAddr').hasError('email')">
+           Enter valid email address
+          </span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword3" formControlName ="password">
+        </div>
+        <span class="offset-md-2" *ngIf= " checkInForm.get('password').touched && checkInForm.get('password').hasError('required')">
+          Enter password
+        </span>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck1" formControlName ="terms">
+            <label class="form-check-label" for="gridCheck1">
+             terms & conditions
+            </label>
+          </div>
+        </div>
+      </div>
+  
+     
+  
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary"
+          [disabled]="!checkInForm.valid">Sign in</button>
+          <button type="reset" class="btn btn-outline-success"
+          (click) = "resetForm()">Clear</button>
+          <button type="submit" class="btn btn-outline-secondary"
+          (click) = "addNewItem()">Add item</button>
+        </div>
+      </div>
+    </form>
+  
+  </div>
+  
+
+
+
+
+
+db.student.insertMany([
+    {
+        _id:1,
+        name:"Rajee",
+        email:'rajee@gmail.com',
+        section:"A",
+        address:{
+            city:'Hyderabad',
+            pincode:546673
+        },
+        phone:[1111111111,2222222222]
+    },
+    {
+        _id:2,
+        name:"Mamta",
+        email:'mamta@gmail.com',
+        section:"B",
+   
+        address:{
+           
+            city:'Mumbai',
+            pincode:400005
+        },
+        phone:[3333333333]
+    },
+    {
+        _id:3,
+        name:"Prabhanjan",
+        email:'prabu@gmail.com',
+       section:"C",
+        
+        address:{
+           
+            city:'Dharwad',
+            pincode:580007
+        },
+        phone:[4444444444,5555555555]
+    },
+    {
+        _id:4,
+        name:"Gurunath",
+        email:'guru@gmail.com',
+        section:"D"
+        address:{
+            
+            city:'Dharwad',
+            pincode:580007
+        },
+        phone:[6666666666]
+    },
+    {
+        _id:5,
+        name:"Madan",
+        email:'madan@gmail.com',
+        section:"E",
+        address:{
+            
+            city:'Hyderabad',
+            pincode:456743
+        },
+        phone:[9999999999]
+    },
+    {
+        _id:6,
+        name:"Gagan",
+        email:'gagan@gmail.com',
+       section:"A",
+        address:{
+           
+            city:'Mumbai',
+            pincode:400073
+        },
+        phone:[0000000000]
+    },
+{
+        _id:7,
+        name:"vishal",
+        email:'vishal@gmail.com',
+       section:"F",
+        address:{
+           
+            city:'Chennai',
+            pincode:400009
+        },
+        phone:[1234567890]
+    },
+{
+        _id:8,
+        name:"Anjali",
+        email:'anjali@gmail.com',
+       section:"B",
+        address:{
+           
+            city:'Patna',
+            pincode:700873
+        },
+        phone:[2345600009]
+    },
+{
+        _id:9,
+        name:"komal",
+        email:'komal@gmail.com',
+       section:"D",
+        address:{
+           
+            city:'pune',
+            pincode:400056
+        },
+        phone:[3456789012]
+    },
+{
+        _id:10,
+        name:"chinnu",
+        email:'chinnu@gmail.com',
+       section:"E",
+        address:{
+           
+            city:'kerala',
+            pincode:400453
+        },
+        phone:[9876543210]
+    },
+])

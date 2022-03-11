@@ -1,0 +1,58 @@
+<div *ngFor='let city of country'>
+<ol *ngIf="disp === city.capital">
+    <div *ngFor='let cap of city.cities'>{{cap}}</div>
+</ol>
+</div>
+this.route.paramMap.subscribe(param => {
+       this.disp= param.get('capital')
+      // console.log(disp);
+      let service =new DataService();
+      this.country=service.getInfo();
+      for (let xyz of this.country){
+        if(this.disp=== xyz.capital){console.log(xyz.cities);
+        }
+      }
+      })
+
+this.route.paramMap.subscribe(param => {
+       this.disp= param.get('capital')
+      // console.log(disp);
+      let service =new DataService();
+      this.country=service.getInfo();
+      
+        }
+      }
+      })
+
+https://staging.roonga.com/
+4242424242424242
+
+
+
+https://bitbucket.org/agiliztechdev/roonga_ui/branch/roongaStagingTrainingGround
+
+
+dinesh00
+
+
+1.Uninstall node
+2.Install 12 version - https://nodejs.org/fr/blog/release/v12.18.4/
+3.uninstall python if exists.
+4.Run this command in cmd in admin mode => npm install --global windows-build-tools
+5.open roonga-api , navigate to path /Node and do => npm install
+6.run code => nodemon index.js
+C:\Users\Neeraja\.windows-build-tools\python27\
+[10:25 AM] Neeraja Reddy
+    
+npm install --global --production windows-build-tools@4.0.0
+​[10:25 AM] Neeraja Reddy
+    
+npm install --global --production windows-build-tools@latest
+
+
+
+
+
+
+
+
